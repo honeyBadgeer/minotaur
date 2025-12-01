@@ -1,0 +1,264 @@
+skeleton.png
+size: 411,411
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Мышь/Мышь00
+  rotate: false
+  xy: 208, 111
+  size: 93, 50
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь01
+  rotate: false
+  xy: 208, 111
+  size: 93, 50
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь02
+  rotate: false
+  xy: 208, 111
+  size: 93, 50
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь03
+  rotate: false
+  xy: 208, 111
+  size: 93, 50
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь04
+  rotate: false
+  xy: 208, 111
+  size: 93, 50
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь05
+  rotate: false
+  xy: 208, 111
+  size: 93, 50
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь06
+  rotate: false
+  xy: 208, 111
+  size: 93, 50
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь07
+  rotate: false
+  xy: 208, 111
+  size: 93, 50
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь08
+  rotate: false
+  xy: 303, 82
+  size: 93, 50
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь09
+  rotate: false
+  xy: 208, 59
+  size: 93, 50
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь10
+  rotate: true
+  xy: 154, 11
+  size: 93, 52
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь11
+  rotate: false
+  xy: 2, 40
+  size: 93, 53
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь12
+  rotate: true
+  xy: 97, 11
+  size: 93, 55
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь13
+  rotate: false
+  xy: 2, 95
+  size: 93, 58
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь14
+  rotate: false
+  xy: 99, 106
+  size: 93, 60
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь15
+  rotate: false
+  xy: 304, 134
+  size: 94, 63
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь16
+  rotate: false
+  xy: 208, 163
+  size: 94, 66
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь17
+  rotate: false
+  xy: 2, 155
+  size: 95, 68
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь18
+  rotate: false
+  xy: 111, 168
+  size: 95, 71
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь19
+  rotate: false
+  xy: 111, 241
+  size: 97, 73
+  orig: 110, 108
+  offset: 2, 25
+  index: -1
+Мышь/Мышь20
+  rotate: true
+  xy: 328, 310
+  size: 99, 77
+  orig: 110, 108
+  offset: 2, 24
+  index: -1
+Мышь/Мышь21
+  rotate: true
+  xy: 327, 206
+  size: 102, 82
+  orig: 110, 108
+  offset: 2, 21
+  index: -1
+Мышь/Мышь22
+  rotate: false
+  xy: 221, 231
+  size: 104, 87
+  orig: 110, 108
+  offset: 2, 19
+  index: -1
+Мышь/Мышь23
+  rotate: false
+  xy: 2, 225
+  size: 107, 91
+  orig: 110, 108
+  offset: 1, 17
+  index: -1
+Мышь/Мышь24
+  rotate: false
+  xy: 2, 318
+  size: 108, 91
+  orig: 110, 108
+  offset: 2, 15
+  index: -1
+Мышь/Мышь25
+  rotate: false
+  xy: 112, 316
+  size: 107, 93
+  orig: 110, 108
+  offset: 0, 15
+  index: -1
+Мышь/Мышь26
+  rotate: false
+  xy: 221, 320
+  size: 105, 89
+  orig: 110, 108
+  offset: 2, 16
+  index: -1
+Мышь/Мышь27
+  rotate: false
+  xy: 407, 408
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Мышь/Мышь28
+  rotate: false
+  xy: 407, 408
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Мышь/Мышь29
+  rotate: false
+  xy: 407, 408
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Мышь/Мышь30
+  rotate: false
+  xy: 407, 408
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Мышь/Мышь31
+  rotate: false
+  xy: 407, 408
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Слой 1
+  rotate: false
+  xy: 208, 14
+  size: 92, 43
+  orig: 92, 49
+  offset: 0, 6
+  index: -1
+задняя лапа зад
+  rotate: true
+  xy: 47, 21
+  size: 17, 13
+  orig: 17, 13
+  offset: 0, 0
+  index: -1
+лапа задняя перед
+  rotate: false
+  xy: 304, 199
+  size: 20, 30
+  orig: 102, 102
+  offset: 26, 21
+  index: -1
+лапа передняя перед
+  rotate: false
+  xy: 2, 9
+  size: 22, 29
+  orig: 102, 102
+  offset: 45, 21
+  index: -1
+передняя лапа зад
+  rotate: true
+  xy: 26, 16
+  size: 22, 19
+  orig: 22, 19
+  offset: 0, 0
+  index: -1

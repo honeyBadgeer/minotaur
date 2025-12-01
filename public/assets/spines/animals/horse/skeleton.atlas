@@ -1,0 +1,271 @@
+skeleton.png
+size: 664,664
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Конь/Конь00
+  rotate: false
+  xy: 500, 275
+  size: 112, 104
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь01
+  rotate: false
+  xy: 500, 275
+  size: 112, 104
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь02
+  rotate: false
+  xy: 500, 275
+  size: 112, 104
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь03
+  rotate: false
+  xy: 500, 275
+  size: 112, 104
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь04
+  rotate: false
+  xy: 500, 275
+  size: 112, 104
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь05
+  rotate: false
+  xy: 500, 275
+  size: 112, 104
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь06
+  rotate: false
+  xy: 500, 275
+  size: 112, 104
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь07
+  rotate: true
+  xy: 350, 3
+  size: 112, 105
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь08
+  rotate: true
+  xy: 253, 117
+  size: 112, 107
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь09
+  rotate: true
+  xy: 238, 3
+  size: 112, 110
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь10
+  rotate: false
+  xy: 124, 2
+  size: 112, 113
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь11
+  rotate: true
+  xy: 134, 117
+  size: 112, 117
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь12
+  rotate: true
+  xy: 2, 2
+  size: 113, 120
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь13
+  rotate: true
+  xy: 457, 4
+  size: 115, 124
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь14
+  rotate: true
+  xy: 455, 121
+  size: 116, 127
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь15
+  rotate: true
+  xy: 2, 117
+  size: 118, 130
+  orig: 165, 162
+  offset: 22, 19
+  index: -1
+Конь/Конь16
+  rotate: true
+  xy: 2, 237
+  size: 123, 133
+  orig: 165, 162
+  offset: 19, 19
+  index: -1
+Конь/Конь17
+  rotate: true
+  xy: 167, 231
+  size: 130, 137
+  orig: 165, 162
+  offset: 15, 19
+  index: -1
+Конь/Конь18
+  rotate: false
+  xy: 321, 239
+  size: 146, 140
+  orig: 165, 162
+  offset: 12, 19
+  index: -1
+Конь/Конь19
+  rotate: false
+  xy: 167, 363
+  size: 152, 143
+  orig: 165, 162
+  offset: 9, 19
+  index: -1
+Конь/Конь20
+  rotate: false
+  xy: 498, 525
+  size: 160, 137
+  orig: 165, 162
+  offset: 5, 19
+  index: -1
+Конь/Конь21
+  rotate: false
+  xy: 334, 381
+  size: 154, 140
+  orig: 165, 162
+  offset: 2, 19
+  index: -1
+Конь/Конь22
+  rotate: false
+  xy: 498, 381
+  size: 159, 142
+  orig: 165, 162
+  offset: 0, 19
+  index: -1
+Конь/Конь23
+  rotate: false
+  xy: 334, 523
+  size: 162, 139
+  orig: 165, 162
+  offset: 1, 17
+  index: -1
+Конь/Конь24
+  rotate: false
+  xy: 2, 362
+  size: 163, 148
+  orig: 165, 162
+  offset: 2, 14
+  index: -1
+Конь/Конь25
+  rotate: false
+  xy: 2, 512
+  size: 165, 150
+  orig: 165, 162
+  offset: 0, 11
+  index: -1
+Конь/Конь26
+  rotate: false
+  xy: 169, 508
+  size: 163, 154
+  orig: 165, 162
+  offset: 0, 8
+  index: -1
+Конь/Конь27
+  rotate: false
+  xy: 660, 661
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Конь/Конь28
+  rotate: false
+  xy: 660, 661
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Конь/Конь29
+  rotate: false
+  xy: 660, 661
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Конь/Конь30
+  rotate: false
+  xy: 660, 661
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Конь/Конь31
+  rotate: false
+  xy: 660, 661
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+залить с учетом содердимого
+  rotate: true
+  xy: 362, 118
+  size: 119, 91
+  orig: 119, 91
+  offset: 0, 0
+  index: -1
+нога задняя зад
+  rotate: false
+  xy: 137, 298
+  size: 27, 62
+  orig: 27, 62
+  offset: 0, 0
+  index: -1
+нога зажняя перед
+  rotate: false
+  xy: 583, 27
+  size: 38, 92
+  orig: 38, 92
+  offset: 0, 0
+  index: -1
+нога передняя зад
+  rotate: false
+  xy: 137, 237
+  size: 20, 59
+  orig: 20, 59
+  offset: 0, 0
+  index: -1
+нога передняя перед
+  rotate: false
+  xy: 469, 241
+  size: 29, 85
+  orig: 29, 85
+  offset: 0, 0
+  index: -1
+хвост
+  rotate: false
+  xy: 623, 328
+  size: 36, 51
+  orig: 36, 51
+  offset: 0, 0
+  index: -1

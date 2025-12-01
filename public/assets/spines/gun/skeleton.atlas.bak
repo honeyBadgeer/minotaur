@@ -1,0 +1,118 @@
+
+skeleton.png
+size: 444,1152
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 2
+  size: 212, 236
+  orig: 212, 237
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 2, 786
+  size: 313, 362
+  orig: 315, 363
+  offset: 1, 0
+  index: -1
+Слой 5
+  rotate: false
+  xy: 2, 786
+  size: 313, 362
+  orig: 315, 363
+  offset: 1, 0
+  index: -1
+3
+  rotate: false
+  xy: 216, 10
+  size: 109, 228
+  orig: 111, 229
+  offset: 1, 1
+  index: -1
+4
+  rotate: false
+  xy: 216, 10
+  size: 109, 228
+  orig: 111, 229
+  offset: 1, 1
+  index: -1
+Группа 5
+  rotate: false
+  xy: 216, 10
+  size: 109, 228
+  orig: 111, 229
+  offset: 1, 1
+  index: -1
+Группа 5 копия
+  rotate: false
+  xy: 216, 10
+  size: 109, 228
+  orig: 111, 229
+  offset: 1, 1
+  index: -1
+Слой 50
+  rotate: false
+  xy: 216, 10
+  size: 109, 228
+  orig: 111, 229
+  offset: 1, 1
+  index: -1
+5
+  rotate: false
+  xy: 2, 478
+  size: 289, 306
+  orig: 289, 306
+  offset: 0, 0
+  index: -1
+Группа 3
+  rotate: false
+  xy: 2, 478
+  size: 289, 306
+  orig: 289, 306
+  offset: 0, 0
+  index: -1
+Слой 49
+  rotate: false
+  xy: 2, 478
+  size: 289, 306
+  orig: 289, 306
+  offset: 0, 0
+  index: -1
+weapon-01 2
+  rotate: false
+  xy: 269, 294
+  size: 155, 182
+  orig: 240, 360
+  offset: 48, 178
+  index: -1
+Слой 13
+  rotate: false
+  xy: 317, 912
+  size: 117, 236
+  orig: 117, 237
+  offset: 0, 0
+  index: -1
+Слой 200 копия 2
+  rotate: false
+  xy: 2, 240
+  size: 265, 236
+  orig: 266, 237
+  offset: 1, 1
+  index: -1
+Слой 201
+  rotate: false
+  xy: 317, 697
+  size: 122, 213
+  orig: 126, 213
+  offset: 4, 0
+  index: -1
+Слой 201 копия
+  rotate: false
+  xy: 293, 482
+  size: 146, 213
+  orig: 150, 213
+  offset: 4, 0
+  index: -1

@@ -1,0 +1,82 @@
+skeleton.png
+size: 704,684
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Слой 200 копия
+  rotate: false
+  xy: 317, 446
+  size: 265, 236
+  orig: 266, 237
+  offset: 1, 1
+  index: -1
+Слой 201
+  rotate: false
+  xy: 555, 231
+  size: 146, 213
+  orig: 150, 213
+  offset: 4, 0
+  index: -1
+Слой 201 копия
+  rotate: false
+  xy: 293, 17
+  size: 146, 213
+  orig: 150, 213
+  offset: 4, 0
+  index: -1
+оружие 1 ствол 2
+  rotate: false
+  xy: 552, 16
+  size: 122, 213
+  orig: 126, 213
+  offset: 4, 0
+  index: -1
+оружие 2
+  rotate: false
+  xy: 2, 12
+  size: 289, 306
+  orig: 289, 306
+  offset: 0, 0
+  index: -1
+оружие 2 ствол
+  rotate: false
+  xy: 441, 2
+  size: 109, 228
+  orig: 111, 229
+  offset: 1, 1
+  index: -1
+оружие 2 ствол 2
+  rotate: false
+  xy: 441, 2
+  size: 109, 228
+  orig: 111, 229
+  offset: 1, 1
+  index: -1
+оружие 2 ствол 2 — копия
+  rotate: false
+  xy: 441, 2
+  size: 109, 228
+  orig: 111, 229
+  offset: 1, 1
+  index: -1
+оружие 3 ствол
+  rotate: false
+  xy: 584, 446
+  size: 117, 236
+  orig: 117, 237
+  offset: 0, 0
+  index: -1
+оружие 3 ствол 2
+  rotate: true
+  xy: 317, 232
+  size: 212, 236
+  orig: 212, 237
+  offset: 0, 0
+  index: -1
+оружие 3_
+  rotate: false
+  xy: 2, 320
+  size: 313, 362
+  orig: 315, 363
+  offset: 1, 0
+  index: -1

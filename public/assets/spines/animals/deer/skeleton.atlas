@@ -1,0 +1,159 @@
+skeleton.png
+size: 745,745
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Олень/Олень00
+  rotate: false
+  xy: 581, 358
+  size: 155, 180
+  orig: 220, 216
+  offset: 29, 13
+  index: -1
+Олень/Олень02
+  rotate: false
+  xy: 581, 358
+  size: 155, 180
+  orig: 220, 216
+  offset: 29, 13
+  index: -1
+Олень/Олень04
+  rotate: false
+  xy: 424, 356
+  size: 155, 182
+  orig: 220, 216
+  offset: 29, 13
+  index: -1
+Олень/Олень06
+  rotate: true
+  xy: 408, 28
+  size: 155, 185
+  orig: 220, 216
+  offset: 29, 13
+  index: -1
+Олень/Олень08
+  rotate: true
+  xy: 406, 185
+  size: 155, 191
+  orig: 220, 216
+  offset: 29, 13
+  index: -1
+Олень/Олень10
+  rotate: true
+  xy: 207, 183
+  size: 157, 197
+  orig: 220, 216
+  offset: 29, 13
+  index: -1
+Олень/Олень12
+  rotate: true
+  xy: 203, 19
+  size: 160, 203
+  orig: 220, 216
+  offset: 29, 13
+  index: -1
+Олень/Олень14
+  rotate: true
+  xy: 2, 13
+  size: 166, 199
+  orig: 220, 216
+  offset: 29, 13
+  index: -1
+Олень/Олень16
+  rotate: true
+  xy: 2, 181
+  size: 169, 203
+  orig: 220, 216
+  offset: 29, 13
+  index: -1
+Олень/Олень18
+  rotate: true
+  xy: 2, 352
+  size: 183, 202
+  orig: 220, 216
+  offset: 29, 13
+  index: -1
+Олень/Олень20
+  rotate: true
+  xy: 219, 342
+  size: 196, 203
+  orig: 220, 216
+  offset: 24, 13
+  index: -1
+Олень/Олень22
+  rotate: false
+  xy: 436, 540
+  size: 203, 203
+  orig: 220, 216
+  offset: 15, 13
+  index: -1
+Олень/Олень24
+  rotate: false
+  xy: 219, 540
+  size: 215, 203
+  orig: 220, 216
+  offset: 5, 13
+  index: -1
+Олень/Олень26
+  rotate: false
+  xy: 2, 537
+  size: 215, 206
+  orig: 220, 216
+  offset: 5, 10
+  index: -1
+Олень/Олень28
+  rotate: false
+  xy: 728, 742
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Олень/Олень30
+  rotate: false
+  xy: 728, 742
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+нога задняя зад
+  rotate: false
+  xy: 641, 565
+  size: 33, 71
+  orig: 33, 71
+  offset: 0, 0
+  index: -1
+нога задняя перед
+  rotate: false
+  xy: 641, 638
+  size: 46, 105
+  orig: 46, 105
+  offset: 0, 0
+  index: -1
+нога передняя зад
+  rotate: false
+  xy: 689, 577
+  size: 33, 75
+  orig: 33, 75
+  offset: 0, 0
+  index: -1
+нога передняя перед
+  rotate: false
+  xy: 689, 654
+  size: 37, 89
+  orig: 37, 89
+  offset: 0, 0
+  index: -1
+тело
+  rotate: false
+  xy: 595, 37
+  size: 148, 146
+  orig: 148, 201
+  offset: 0, 55
+  index: -1
+хвост
+  rotate: true
+  xy: 676, 540
+  size: 35, 46
+  orig: 35, 46
+  offset: 0, 0
+  index: -1

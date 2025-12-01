@@ -1,0 +1,278 @@
+skeleton.png
+size: 618,618
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Кабан/Кабан00
+  rotate: false
+  xy: 393, 247
+  size: 120, 97
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан01
+  rotate: false
+  xy: 393, 247
+  size: 120, 97
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан02
+  rotate: false
+  xy: 393, 247
+  size: 120, 97
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан03
+  rotate: false
+  xy: 393, 247
+  size: 120, 97
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан04
+  rotate: false
+  xy: 393, 247
+  size: 120, 97
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан05
+  rotate: false
+  xy: 393, 247
+  size: 120, 97
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан06
+  rotate: false
+  xy: 393, 247
+  size: 120, 97
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан07
+  rotate: false
+  xy: 393, 247
+  size: 120, 97
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан08
+  rotate: false
+  xy: 393, 42
+  size: 120, 98
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан09
+  rotate: true
+  xy: 515, 7
+  size: 120, 99
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан10
+  rotate: true
+  xy: 515, 129
+  size: 120, 100
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан11
+  rotate: true
+  xy: 515, 251
+  size: 120, 101
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан12
+  rotate: false
+  xy: 393, 142
+  size: 120, 103
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан13
+  rotate: true
+  xy: 160, 81
+  size: 120, 106
+  orig: 165, 162
+  offset: 19, 20
+  index: -1
+Кабан/Кабан14
+  rotate: false
+  xy: 495, 507
+  size: 121, 109
+  orig: 165, 162
+  offset: 18, 20
+  index: -1
+Кабан/Кабан15
+  rotate: false
+  xy: 268, 91
+  size: 123, 108
+  orig: 165, 162
+  offset: 17, 20
+  index: -1
+Кабан/Кабан16
+  rotate: false
+  xy: 142, 203
+  size: 125, 114
+  orig: 165, 162
+  offset: 15, 20
+  index: -1
+Кабан/Кабан17
+  rotate: true
+  xy: 269, 201
+  size: 131, 117
+  orig: 165, 162
+  offset: 12, 20
+  index: -1
+Кабан/Кабан18
+  rotate: true
+  xy: 393, 346
+  size: 137, 114
+  orig: 165, 162
+  offset: 9, 20
+  index: -1
+Кабан/Кабан19
+  rotate: true
+  xy: 269, 334
+  size: 143, 122
+  orig: 165, 162
+  offset: 6, 20
+  index: -1
+Кабан/Кабан20
+  rotate: true
+  xy: 142, 319
+  size: 150, 125
+  orig: 165, 162
+  offset: 3, 20
+  index: -1
+Кабан/Кабан21
+  rotate: false
+  xy: 2, 10
+  size: 156, 128
+  orig: 165, 162
+  offset: 0, 20
+  index: -1
+Кабан/Кабан22
+  rotate: false
+  xy: 334, 485
+  size: 159, 131
+  orig: 165, 162
+  offset: 0, 19
+  index: -1
+Кабан/Кабан23
+  rotate: true
+  xy: 2, 140
+  size: 162, 133
+  orig: 165, 162
+  offset: 1, 19
+  index: -1
+Кабан/Кабан24
+  rotate: false
+  xy: 167, 479
+  size: 165, 137
+  orig: 165, 162
+  offset: 0, 18
+  index: -1
+Кабан/Кабан25
+  rotate: true
+  xy: 2, 304
+  size: 165, 138
+  orig: 165, 162
+  offset: 0, 15
+  index: -1
+Кабан/Кабан26
+  rotate: false
+  xy: 2, 471
+  size: 163, 145
+  orig: 165, 162
+  offset: 0, 11
+  index: -1
+Кабан/Кабан27
+  rotate: false
+  xy: 167, 476
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Кабан/Кабан28
+  rotate: false
+  xy: 167, 476
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Кабан/Кабан29
+  rotate: false
+  xy: 167, 476
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Кабан/Кабан30
+  rotate: false
+  xy: 167, 476
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Кабан/Кабан31
+  rotate: false
+  xy: 167, 476
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+задняя лапа зад
+  rotate: false
+  xy: 365, 49
+  size: 26, 40
+  orig: 26, 40
+  offset: 0, 0
+  index: -1
+задняя лапа перед
+  rotate: true
+  xy: 160, 4
+  size: 31, 63
+  orig: 31, 63
+  offset: 0, 0
+  index: -1
+передняя лапа зад
+  rotate: false
+  xy: 247, 36
+  size: 38, 43
+  orig: 38, 43
+  offset: 0, 0
+  index: -1
+передняя лапа перед
+  rotate: true
+  xy: 160, 37
+  size: 42, 85
+  orig: 42, 85
+  offset: 0, 0
+  index: -1
+тело
+  rotate: true
+  xy: 509, 373
+  size: 132, 97
+  orig: 132, 120
+  offset: 0, 23
+  index: -1
+хвост
+  rotate: true
+  xy: 320, 65
+  size: 24, 43
+  orig: 24, 43
+  offset: 0, 0
+  index: -1
+шерстка
+  rotate: false
+  xy: 287, 51
+  size: 31, 38
+  orig: 31, 38
+  offset: 0, 0
+  index: -1

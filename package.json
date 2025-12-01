@@ -1,0 +1,25 @@
+{
+  "name": "safari-phaser",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@esotericsoftware/spine-core": "^4.2.86",
+    "prettier": "3.5.3",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "dependencies": {
+    "@esotericsoftware/spine-phaser-v3": "^4.2.90",
+    "@types/howler": "^2.2.12",
+    "howler": "^2.2.4",
+    "i18next": "^25.2.1",
+    "phaser": "^3.88.2"
+  }
+}

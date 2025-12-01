@@ -1,0 +1,278 @@
+skeleton.png
+size: 729,729
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Слой 1
+  rotate: false
+  xy: 273, 372
+  size: 31, 45
+  orig: 31, 45
+  offset: 0, 0
+  index: -1
+Слой 12
+  rotate: false
+  xy: 404, 12
+  size: 27, 27
+  orig: 32, 29
+  offset: 5, 0
+  index: -1
+Слой 13
+  rotate: false
+  xy: 306, 380
+  size: 32, 37
+  orig: 32, 39
+  offset: 0, 0
+  index: -1
+Слой 14
+  rotate: true
+  xy: 368, 365
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+Слой 15
+  rotate: false
+  xy: 340, 380
+  size: 26, 37
+  orig: 26, 37
+  offset: 0, 0
+  index: -1
+Слой 16
+  rotate: false
+  xy: 368, 399
+  size: 33, 18
+  orig: 33, 18
+  offset: 0, 0
+  index: -1
+Слой 17
+  rotate: true
+  xy: 171, 186
+  size: 119, 82
+  orig: 119, 82
+  offset: 0, 0
+  index: -1
+Черепаха/Черепаха00
+  rotate: true
+  xy: 171, 307
+  size: 120, 100
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха01
+  rotate: true
+  xy: 171, 307
+  size: 120, 100
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха02
+  rotate: true
+  xy: 171, 307
+  size: 120, 100
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха03
+  rotate: true
+  xy: 171, 307
+  size: 120, 100
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха04
+  rotate: true
+  xy: 171, 307
+  size: 120, 100
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха05
+  rotate: true
+  xy: 171, 307
+  size: 120, 100
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха06
+  rotate: true
+  xy: 171, 307
+  size: 120, 100
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха07
+  rotate: true
+  xy: 624, 485
+  size: 120, 101
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха08
+  rotate: true
+  xy: 624, 607
+  size: 120, 103
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха09
+  rotate: true
+  xy: 522, 23
+  size: 120, 105
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха10
+  rotate: false
+  xy: 522, 145
+  size: 120, 106
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха11
+  rotate: false
+  xy: 560, 253
+  size: 120, 108
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха12
+  rotate: true
+  xy: 618, 363
+  size: 120, 109
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха13
+  rotate: false
+  xy: 152, 429
+  size: 122, 111
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха14
+  rotate: false
+  xy: 432, 257
+  size: 126, 113
+  orig: 220, 216
+  offset: 50, 60
+  index: -1
+Черепаха/Черепаха15
+  rotate: true
+  xy: 404, 41
+  size: 133, 116
+  orig: 220, 216
+  offset: 48, 60
+  index: -1
+Черепаха/Черепаха16
+  rotate: false
+  xy: 276, 419
+  size: 142, 121
+  orig: 220, 216
+  offset: 44, 60
+  index: -1
+Черепаха/Черепаха17
+  rotate: true
+  xy: 276, 28
+  size: 146, 126
+  orig: 220, 216
+  offset: 44, 60
+  index: -1
+Черепаха/Черепаха18
+  rotate: true
+  xy: 142, 11
+  size: 160, 132
+  orig: 220, 216
+  offset: 35, 59
+  index: -1
+Черепаха/Черепаха19
+  rotate: true
+  xy: 2, 3
+  size: 168, 138
+  orig: 220, 216
+  offset: 31, 58
+  index: -1
+Черепаха/Черепаха20
+  rotate: true
+  xy: 2, 364
+  size: 176, 148
+  orig: 220, 216
+  offset: 27, 53
+  index: -1
+Черепаха/Черепаха21
+  rotate: true
+  xy: 273, 176
+  size: 185, 157
+  orig: 220, 216
+  offset: 23, 49
+  index: -1
+Черепаха/Черепаха22
+  rotate: true
+  xy: 2, 173
+  size: 188, 167
+  orig: 220, 216
+  offset: 24, 44
+  index: -1
+Черепаха/Черепаха23
+  rotate: false
+  xy: 420, 372
+  size: 196, 177
+  orig: 220, 216
+  offset: 21, 39
+  index: -1
+Черепаха/Черепаха24
+  rotate: false
+  xy: 420, 551
+  size: 202, 176
+  orig: 220, 216
+  offset: 18, 35
+  index: -1
+Черепаха/Черепаха25
+  rotate: false
+  xy: 212, 542
+  size: 206, 185
+  orig: 220, 216
+  offset: 14, 30
+  index: -1
+Черепаха/Черепаха26
+  rotate: false
+  xy: 2, 542
+  size: 208, 185
+  orig: 220, 216
+  offset: 10, 25
+  index: -1
+Черепаха/Черепаха27
+  rotate: false
+  xy: 618, 548
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Черепаха/Черепаха28
+  rotate: false
+  xy: 618, 548
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Черепаха/Черепаха29
+  rotate: false
+  xy: 618, 548
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Черепаха/Черепаха30
+  rotate: false
+  xy: 618, 548
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Черепаха/Черепаха31
+  rotate: false
+  xy: 618, 548
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1

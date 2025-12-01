@@ -1,0 +1,104 @@
+{
+  "textures": [
+    {
+      "image": "button.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 1592,
+        "h": 118
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "disabled",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 398,
+            "h": 118
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 398,
+            "h": 118
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 398,
+            "h": 118
+          }
+        },
+        {
+          "filename": "hover",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 398,
+            "h": 118
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 398,
+            "h": 118
+          },
+          "frame": {
+            "x": 398,
+            "y": 0,
+            "w": 398,
+            "h": 118
+          }
+        },
+        {
+          "filename": "normal",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 398,
+            "h": 118
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 398,
+            "h": 118
+          },
+          "frame": {
+            "x": 796,
+            "y": 0,
+            "w": 398,
+            "h": 118
+          }
+        },
+        {
+          "filename": "pressed",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 398,
+            "h": 118
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 398,
+            "h": 118
+          },
+          "frame": {
+            "x": 1194,
+            "y": 0,
+            "w": 398,
+            "h": 118
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "3.0",
+    "smartupdate": "$TexturePacker:SmartUpdate:b95daa6f206032a8b2f0440ed8939b0e:9bf5a7a80112721287c8cb6b8464a80f:c39245c3a59c1712d97d26c862b4cbc5$"
+  }
+}

@@ -1,0 +1,236 @@
+skeleton.png
+size: 729,729
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Змея/Змея00
+  rotate: true
+  xy: 617, 300
+  size: 127, 108
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея01
+  rotate: true
+  xy: 617, 300
+  size: 127, 108
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея02
+  rotate: true
+  xy: 617, 300
+  size: 127, 108
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея03
+  rotate: true
+  xy: 617, 300
+  size: 127, 108
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея04
+  rotate: true
+  xy: 617, 300
+  size: 127, 108
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея05
+  rotate: true
+  xy: 617, 300
+  size: 127, 108
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея06
+  rotate: true
+  xy: 617, 300
+  size: 127, 108
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея07
+  rotate: true
+  xy: 617, 300
+  size: 127, 108
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея08
+  rotate: true
+  xy: 617, 300
+  size: 127, 108
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея09
+  rotate: true
+  xy: 617, 429
+  size: 127, 110
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея10
+  rotate: false
+  xy: 444, 17
+  size: 127, 111
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея11
+  rotate: false
+  xy: 583, 41
+  size: 127, 112
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея12
+  rotate: true
+  xy: 318, 135
+  size: 127, 114
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея13
+  rotate: true
+  xy: 318, 264
+  size: 129, 116
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея14
+  rotate: false
+  xy: 308, 6
+  size: 134, 118
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея15
+  rotate: false
+  xy: 168, 3
+  size: 138, 121
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея16
+  rotate: true
+  xy: 601, 155
+  size: 143, 125
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея17
+  rotate: false
+  xy: 434, 130
+  size: 147, 129
+  orig: 220, 216
+  offset: 42, 37
+  index: -1
+Змея/Змея18
+  rotate: false
+  xy: 444, 261
+  size: 155, 132
+  orig: 220, 216
+  offset: 39, 37
+  index: -1
+Змея/Змея19
+  rotate: false
+  xy: 2, 108
+  size: 164, 136
+  orig: 220, 216
+  offset: 35, 37
+  index: -1
+Змея/Змея20
+  rotate: true
+  xy: 176, 126
+  size: 172, 140
+  orig: 220, 216
+  offset: 31, 37
+  index: -1
+Змея/Змея21
+  rotate: false
+  xy: 2, 396
+  size: 181, 144
+  orig: 220, 216
+  offset: 27, 37
+  index: -1
+Змея/Змея22
+  rotate: false
+  xy: 207, 395
+  size: 189, 153
+  orig: 220, 216
+  offset: 23, 32
+  index: -1
+Змея/Змея23
+  rotate: false
+  xy: 417, 395
+  size: 198, 161
+  orig: 220, 216
+  offset: 19, 28
+  index: -1
+Змея/Змея24
+  rotate: false
+  xy: 417, 558
+  size: 205, 169
+  orig: 220, 216
+  offset: 15, 23
+  index: -1
+Змея/Змея25
+  rotate: false
+  xy: 207, 550
+  size: 208, 177
+  orig: 220, 216
+  offset: 12, 19
+  index: -1
+Змея/Змея26
+  rotate: false
+  xy: 2, 542
+  size: 203, 185
+  orig: 220, 216
+  offset: 14, 14
+  index: -1
+Змея/Змея27
+  rotate: false
+  xy: 624, 726
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Змея/Змея28
+  rotate: false
+  xy: 624, 726
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Змея/Змея29
+  rotate: false
+  xy: 624, 726
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Змея/Змея30
+  rotate: false
+  xy: 624, 726
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Змея/Змея31
+  rotate: false
+  xy: 624, 726
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+змея
+  rotate: false
+  xy: 2, 246
+  size: 172, 148
+  orig: 205, 205
+  offset: 16, 29
+  index: -1

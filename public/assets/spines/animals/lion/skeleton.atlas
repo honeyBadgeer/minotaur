@@ -1,0 +1,278 @@
+skeleton.png
+size: 612,612
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Лев/Лев00
+  rotate: true
+  xy: 280, 11
+  size: 131, 96
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев01
+  rotate: true
+  xy: 280, 11
+  size: 131, 96
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев02
+  rotate: true
+  xy: 280, 11
+  size: 131, 96
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев03
+  rotate: true
+  xy: 280, 11
+  size: 131, 96
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев04
+  rotate: true
+  xy: 280, 11
+  size: 131, 96
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев05
+  rotate: true
+  xy: 280, 11
+  size: 131, 96
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев06
+  rotate: true
+  xy: 280, 11
+  size: 131, 96
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев07
+  rotate: true
+  xy: 280, 11
+  size: 131, 96
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев08
+  rotate: false
+  xy: 463, 2
+  size: 131, 96
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев09
+  rotate: false
+  xy: 135, 145
+  size: 131, 97
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев10
+  rotate: true
+  xy: 135, 12
+  size: 131, 97
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев11
+  rotate: false
+  xy: 2, 144
+  size: 131, 98
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев12
+  rotate: true
+  xy: 2, 11
+  size: 131, 99
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев13
+  rotate: false
+  xy: 469, 100
+  size: 131, 100
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев14
+  rotate: false
+  xy: 297, 144
+  size: 131, 102
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев15
+  rotate: false
+  xy: 470, 202
+  size: 133, 103
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев16
+  rotate: false
+  xy: 297, 248
+  size: 137, 105
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев17
+  rotate: false
+  xy: 2, 244
+  size: 140, 108
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев18
+  rotate: false
+  xy: 151, 244
+  size: 144, 110
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев19
+  rotate: false
+  xy: 2, 354
+  size: 147, 113
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев20
+  rotate: false
+  xy: 161, 356
+  size: 150, 116
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев21
+  rotate: true
+  xy: 472, 307
+  size: 150, 119
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев22
+  rotate: false
+  xy: 320, 355
+  size: 150, 122
+  orig: 165, 162
+  offset: 15, 17
+  index: -1
+Лев/Лев23
+  rotate: true
+  xy: 476, 459
+  size: 151, 127
+  orig: 165, 162
+  offset: 14, 15
+  index: -1
+Лев/Лев24
+  rotate: false
+  xy: 320, 479
+  size: 154, 131
+  orig: 165, 162
+  offset: 11, 13
+  index: -1
+Лев/Лев25
+  rotate: false
+  xy: 161, 474
+  size: 157, 136
+  orig: 165, 162
+  offset: 8, 11
+  index: -1
+Лев/Лев26
+  rotate: false
+  xy: 2, 469
+  size: 157, 141
+  orig: 165, 162
+  offset: 8, 8
+  index: -1
+Лев/Лев27
+  rotate: false
+  xy: 605, 609
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Лев/Лев28
+  rotate: false
+  xy: 605, 609
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Лев/Лев29
+  rotate: false
+  xy: 605, 609
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Лев/Лев30
+  rotate: false
+  xy: 605, 609
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Лев/Лев31
+  rotate: false
+  xy: 605, 609
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+задняя лапа зад
+  rotate: false
+  xy: 268, 193
+  size: 27, 49
+  orig: 27, 49
+  offset: 0, 0
+  index: -1
+задняя лапа перед
+  rotate: false
+  xy: 436, 287
+  size: 32, 66
+  orig: 32, 66
+  offset: 0, 0
+  index: -1
+лапа передняя перед
+  rotate: false
+  xy: 436, 235
+  size: 31, 50
+  orig: 31, 50
+  offset: 0, 0
+  index: -1
+передняя лапа зад
+  rotate: false
+  xy: 430, 136
+  size: 35, 45
+  orig: 35, 45
+  offset: 0, 0
+  index: -1
+тело
+  rotate: true
+  xy: 378, 15
+  size: 119, 83
+  orig: 119, 83
+  offset: 0, 0
+  index: -1
+хвост
+  rotate: false
+  xy: 430, 183
+  size: 37, 50
+  orig: 37, 50
+  offset: 0, 0
+  index: -1
+шерсть
+  rotate: true
+  xy: 234, 103
+  size: 40, 44
+  orig: 40, 44
+  offset: 0, 0
+  index: -1

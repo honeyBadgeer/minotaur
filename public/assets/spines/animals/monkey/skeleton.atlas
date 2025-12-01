@@ -1,0 +1,271 @@
+skeleton.png
+size: 745,745
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Обезьяна/Обезьяна00
+  rotate: false
+  xy: 601, 197
+  size: 119, 109
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна01
+  rotate: false
+  xy: 601, 197
+  size: 119, 109
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна02
+  rotate: false
+  xy: 601, 197
+  size: 119, 109
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна03
+  rotate: false
+  xy: 601, 197
+  size: 119, 109
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна04
+  rotate: true
+  xy: 602, 356
+  size: 119, 109
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна05
+  rotate: false
+  xy: 129, 2
+  size: 119, 110
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна06
+  rotate: true
+  xy: 595, 64
+  size: 119, 112
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна07
+  rotate: true
+  xy: 354, 35
+  size: 119, 114
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна08
+  rotate: false
+  xy: 474, 67
+  size: 119, 116
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна09
+  rotate: true
+  xy: 354, 156
+  size: 120, 118
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна10
+  rotate: false
+  xy: 478, 185
+  size: 121, 121
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна11
+  rotate: false
+  xy: 478, 308
+  size: 122, 123
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна12
+  rotate: true
+  xy: 2, 7
+  size: 124, 125
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна13
+  rotate: false
+  xy: 2, 133
+  size: 127, 127
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна14
+  rotate: false
+  xy: 600, 614
+  size: 129, 129
+  orig: 165, 162
+  offset: 20, 29
+  index: -1
+Обезьяна/Обезьяна15
+  rotate: false
+  xy: 463, 612
+  size: 135, 131
+  orig: 165, 162
+  offset: 18, 29
+  index: -1
+Обезьяна/Обезьяна16
+  rotate: false
+  xy: 319, 610
+  size: 142, 133
+  orig: 165, 162
+  offset: 15, 29
+  index: -1
+Обезьяна/Обезьяна17
+  rotate: true
+  xy: 139, 114
+  size: 148, 128
+  orig: 165, 162
+  offset: 12, 29
+  index: -1
+Обезьяна/Обезьяна18
+  rotate: false
+  xy: 454, 477
+  size: 154, 131
+  orig: 165, 162
+  offset: 9, 29
+  index: -1
+Обезьяна/Обезьяна19
+  rotate: true
+  xy: 139, 264
+  size: 159, 133
+  orig: 165, 162
+  offset: 6, 29
+  index: -1
+Обезьяна/Обезьяна20
+  rotate: false
+  xy: 314, 278
+  size: 162, 132
+  orig: 165, 162
+  offset: 3, 29
+  index: -1
+Обезьяна/Обезьяна21
+  rotate: true
+  xy: 2, 262
+  size: 161, 135
+  orig: 165, 162
+  offset: 0, 27
+  index: -1
+Обезьяна/Обезьяна22
+  rotate: true
+  xy: 314, 412
+  size: 164, 138
+  orig: 165, 162
+  offset: 0, 24
+  index: -1
+Обезьяна/Обезьяна23
+  rotate: false
+  xy: 148, 435
+  size: 164, 141
+  orig: 165, 162
+  offset: 1, 21
+  index: -1
+Обезьяна/Обезьяна24
+  rotate: true
+  xy: 2, 425
+  size: 165, 144
+  orig: 165, 162
+  offset: 0, 18
+  index: -1
+Обезьяна/Обезьяна25
+  rotate: true
+  xy: 169, 578
+  size: 165, 148
+  orig: 165, 162
+  offset: 0, 14
+  index: -1
+Обезьяна/Обезьяна26
+  rotate: false
+  xy: 2, 592
+  size: 165, 151
+  orig: 165, 162
+  offset: 0, 11
+  index: -1
+Обезьяна/Обезьяна27
+  rotate: false
+  xy: 148, 589
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Обезьяна/Обезьяна28
+  rotate: false
+  xy: 148, 589
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Обезьяна/Обезьяна29
+  rotate: false
+  xy: 148, 589
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Обезьяна/Обезьяна30
+  rotate: false
+  xy: 148, 589
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Обезьяна/Обезьяна31
+  rotate: false
+  xy: 148, 589
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Слой 2
+  rotate: false
+  xy: 274, 356
+  size: 38, 77
+  orig: 38, 77
+  offset: 0, 0
+  index: -1
+Слой 3
+  rotate: true
+  xy: 319, 582
+  size: 26, 44
+  orig: 26, 44
+  offset: 0, 0
+  index: -1
+Слой 4
+  rotate: false
+  xy: 274, 299
+  size: 36, 55
+  orig: 36, 56
+  offset: 0, 1
+  index: -1
+Слой 5 копия
+  rotate: true
+  xy: 454, 433
+  size: 42, 115
+  orig: 42, 115
+  offset: 0, 0
+  index: -1
+Слой 8 копия 2
+  rotate: false
+  xy: 274, 218
+  size: 34, 79
+  orig: 34, 79
+  offset: 0, 0
+  index: -1
+дорисуй в стилистике всего изображения нехватающую чать копия
+  rotate: true
+  xy: 269, 88
+  size: 128, 83
+  orig: 128, 83
+  offset: 0, 0
+  index: -1

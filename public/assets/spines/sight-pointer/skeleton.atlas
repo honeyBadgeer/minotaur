@@ -1,0 +1,19 @@
+skeleton.png
+size: 180,100
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Group 41200
+  rotate: false
+  xy: 99, 18
+  size: 79, 79
+  orig: 79, 80
+  offset: 0, 1
+  index: -1
+Group 41200 копия 2
+  rotate: false
+  xy: 2, 2
+  size: 95, 95
+  orig: 97, 97
+  offset: 0, 2
+  index: -1
