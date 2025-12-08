@@ -106,8 +106,6 @@ class GameController {
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         SoundManager.forceMute();
-      } else {
-        window.location.reload();
       }
     });
 
