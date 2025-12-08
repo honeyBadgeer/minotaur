@@ -4,8 +4,14 @@ import type {
   IAtlasData,
   IBundle,
   IMultiAtlasData,
+  SymbolType,
 } from '../types/types';
-import { BUNDLES_CONFIG, ENEMY_CHARACTERISTICS, WIDTH } from './constants';
+import {
+  BUNDLES_CONFIG,
+  ENEMY_CHARACTERISTICS,
+  SYMBOLS_CONFIG,
+  WIDTH,
+} from './constants';
 import type { TCharacterKey } from '@/core';
 
 interface SpineData {
@@ -81,6 +87,12 @@ function getCharacteristic(type: EnemyType) {
     ENEMY_CHARACTERISTICS[0]
   );
 }
+function getSymbol(value: number): SymbolType {
+  const symbol =
+    SYMBOLS_CONFIG.find((item) => item.value === value) ?? SYMBOLS_CONFIG[0];
+
+  return symbol.key;
+}
 function getBundleConfig(key: IBundle) {
   const currentBundle =
     BUNDLES_CONFIG.find((item) => item.key === key) ?? BUNDLES_CONFIG[0];
@@ -107,4 +119,5 @@ export {
   getCharacteristic,
   getBundleConfig,
   getBetsByCharacter,
+  getSymbol,
 };

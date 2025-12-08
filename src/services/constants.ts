@@ -4,6 +4,7 @@ import type {
   IMultiAtlasData,
   TBundlesConfig,
   TEnemyOptions,
+  TSymbolsConfig,
 } from '../types/types';
 
 const bootSpritesMap: Record<string, string> = {
@@ -99,7 +100,22 @@ const preloadSpines: Record<string, { json: string; atlas: string }> = {
     json: 'assets/spines/shield/skeleton.json',
     atlas: 'assets/spines/shield/skeleton.atlas',
   },
+  qSymbol: {
+    json: 'assets/spines/q/skeleton.json',
+    atlas: 'assets/spines/q/skeleton.atlas',
+  },
 };
+
+const SYMBOLS_CONFIG: TSymbolsConfig[] = [
+  {
+    key: 'shield',
+    value: 0,
+  },
+  {
+    key: 'qSymbol',
+    value: 1,
+  },
+];
 
 const BUNDLES_CONFIG: TBundlesConfig[] = [
   {
@@ -459,4 +475,5 @@ export {
   characters,
   MAX_DEMO_VALUE,
   MAX_DEMO_BUNDLE_VALUE,
+  SYMBOLS_CONFIG,
 };

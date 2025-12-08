@@ -5,6 +5,8 @@ export interface IAtlasData {
   imageUrl: string;
 }
 
+export type SymbolType = 'shield' | 'qSymbol';
+
 export interface IMultiAtlasData {
   jsonUrl: string;
   basePath: string;
@@ -44,6 +46,10 @@ export type TBundlesConfig = {
   bodyActivateIndex: number;
   bodyDisableIndex: number;
   count: number;
+};
+export type TSymbolsConfig = {
+  key: SymbolType;
+  value: number;
 };
 
 export type Sides =

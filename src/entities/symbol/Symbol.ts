@@ -1,20 +1,19 @@
+import type { SymbolType } from '@/types/types';
 import type { SpineGameObject } from '@esotericsoftware/spine-phaser-v3/dist/SpineGameObject';
 import { GameObjects, type Scene } from 'phaser';
-
-type SymbolType = 'shield';
 
 export class Symbol extends GameObjects.Container {
   public spineInstance: SpineGameObject | null = null;
 
   private symbolType: SymbolType;
 
-  constructor(scene: Scene, x: number, y: number) {
+  constructor(scene: Scene, type: SymbolType, x: number, y: number) {
     super(scene, 0, 0);
 
     this.setScale(0.7);
 
     this.scene = scene;
-    this.symbolType = 'shield';
+    this.symbolType = type;
 
     this.spineInstance = this.scene.add.spine(
       x,

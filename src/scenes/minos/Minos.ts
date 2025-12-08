@@ -1,4 +1,5 @@
 import { Symbol } from '@/entities/symbol';
+import { getSymbol } from '@/services/helpers';
 import { Scene } from 'phaser';
 
 export class Minos extends Scene {
@@ -8,11 +9,11 @@ export class Minos extends Scene {
     super('Minos');
 
     this.winCombination = [
-      [7, 7, 2],
-      [9, 8, 8],
-      [8, 8, 1],
-      [1, 1, 1],
-      [5, 6, 3],
+      [0, 0, 0],
+      [0, 1, 0],
+      [0, 0, 1],
+      [0, 1, 0],
+      [1, 0, 0],
     ];
   }
 
@@ -22,17 +23,19 @@ export class Minos extends Scene {
   }
 
   createSymbols() {
-    const startX = 150;
-    const startY = 150;
-    const offsetX = 250;
-    const offsetY = 250;
+    const startX = 250;
+    const startY = 250;
+    const offsetX = 280;
+    const offsetY = 280;
 
     this.winCombination.map((row, rowIdx) => {
       row.map((symbol, colIdx) => {
+        const test = getSymbol(symbol);
+
         const posX = startX + rowIdx * offsetX;
         const posY = startY + colIdx * offsetY;
 
-        const newSymbol = new Symbol(this, posX, posY);
+        const newSymbol = new Symbol(this, test, posX, posY);
 
         return newSymbol;
       });
