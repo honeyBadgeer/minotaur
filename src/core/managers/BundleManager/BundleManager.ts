@@ -4,7 +4,6 @@ import type { EnemyService } from '@/core/services';
 import type { View } from '@/core/View/View';
 import { PurchaseEvents } from '@/network/PurchaseService';
 import type { WSTicketWinState } from '@/network/WebSocketService';
-import { getBundleConfig } from '@/services/helpers';
 import { mdeToNormal } from '@/services/lib/mdeToNormal';
 import type { IBundle } from '@/types/types';
 import type { DialogManager } from '../DialogManager';
@@ -41,17 +40,7 @@ export class BundleManager {
   }
 
   setBundleMode(bundleType: IBundle) {
-    const currentBet = this.model.getCurrentBetMde();
     this.model.setBundle(bundleType);
-
-    const bundle = getBundleConfig(bundleType);
-    const amount = mdeToNormal(bundle.count * (currentBet ?? 0));
-
-    const callback = () => {
-      eventBus.emit(PurchaseEvents.BUY_BUNDLE, bundle.count, bundleType);
-    };
-
-    this.dialogManager.addToQueue('confirm', { amount, onConfirm: callback });
   }
 
   setBundleComplete() {

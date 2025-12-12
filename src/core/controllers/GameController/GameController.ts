@@ -6,11 +6,7 @@ import {
   WSStates,
   type WSData,
 } from '@/network/WebSocketService';
-import {
-  getBetsByCharacter,
-  getBundleConfig,
-  getSearchParams,
-} from '@/services/helpers';
+import { getBetsByCharacter, getSearchParams } from '@/services/helpers';
 import { mdeToNormal } from '@/services/lib/mdeToNormal';
 import type { Character } from '@/ui/components/CharacterCarousel/types';
 import { Game } from 'phaser';
@@ -199,11 +195,6 @@ class GameController {
         break;
 
       case GameStates.WAITING:
-        const bundleType = this.model.getBundle();
-        const bundle = getBundleConfig(bundleType!);
-
-        if (!bundle) return;
-        this.view.renderBundle(bundle.key);
         break;
 
       case GameStates.PLAYING:

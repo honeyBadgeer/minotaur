@@ -2,7 +2,6 @@ import type { SoundConfig, TCharacterKey } from '@/core';
 import type {
   IAtlasData,
   IMultiAtlasData,
-  TBundlesConfig,
   TEnemyOptions,
   TSymbolsConfig,
 } from '../types/types';
@@ -114,39 +113,6 @@ const SYMBOLS_CONFIG: TSymbolsConfig[] = [
   {
     key: 'qSymbol',
     value: 1,
-  },
-];
-
-const BUNDLES_CONFIG: TBundlesConfig[] = [
-  {
-    key: 'laser',
-    texture: 'laserBoom',
-    frameRate: 15,
-    pointerX: 0,
-    pointerY: 0,
-    bodyActivateIndex: 10,
-    bodyDisableIndex: 28,
-    count: 100,
-  },
-  {
-    key: 'grenade',
-    texture: 'grenadeBoom',
-    frameRate: 15,
-    pointerX: 0,
-    pointerY: 0,
-    bodyActivateIndex: 10,
-    bodyDisableIndex: 28,
-    count: 60,
-  },
-  {
-    key: 'ufo',
-    texture: 'ufoBoom',
-    frameRate: 15,
-    pointerX: 0,
-    pointerY: 0,
-    bodyActivateIndex: 10,
-    bodyDisableIndex: 28,
-    count: 30,
   },
 ];
 
@@ -468,7 +434,6 @@ export {
   WIDTH,
   HEIGHT,
   DEFAULT_STYLES_BUTTON,
-  BUNDLES_CONFIG,
   multiAtlasMap,
   soundPaths,
   preloadFont,

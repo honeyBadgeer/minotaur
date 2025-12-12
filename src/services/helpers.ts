@@ -2,16 +2,10 @@ import type { Loader, Scene } from 'phaser';
 import type {
   EnemyType,
   IAtlasData,
-  IBundle,
   IMultiAtlasData,
   SymbolType,
 } from '../types/types';
-import {
-  BUNDLES_CONFIG,
-  ENEMY_CHARACTERISTICS,
-  SYMBOLS_CONFIG,
-  WIDTH,
-} from './constants';
+import { ENEMY_CHARACTERISTICS, SYMBOLS_CONFIG, WIDTH } from './constants';
 import type { TCharacterKey } from '@/core';
 
 interface SpineData {
@@ -93,12 +87,6 @@ function getSymbol(value: number): SymbolType {
 
   return symbol.key;
 }
-function getBundleConfig(key: IBundle) {
-  const currentBundle =
-    BUNDLES_CONFIG.find((item) => item.key === key) ?? BUNDLES_CONFIG[0];
-
-  return currentBundle;
-}
 
 function getBetsByCharacter(key: TCharacterKey, betLadderMDE: number[]) {
   const indexMap: Record<TCharacterKey, number> = {
@@ -117,7 +105,6 @@ export {
   alignToCenter,
   getSearchParams,
   getCharacteristic,
-  getBundleConfig,
   getBetsByCharacter,
   getSymbol,
 };

@@ -2,7 +2,6 @@ import { CoreEvents, GameEvents } from '@/core/events/events';
 import { anims, EnemyEntity, Player } from '@/entities';
 import { BulletFactory } from '@/entities/Bullet';
 import { BulletEntity } from '@/entities/Bullet/BulletEntity';
-import { getBundleConfig } from '@/services/helpers';
 import type { BeastMode, EnemyId, EnemyType, IBundle } from '@/types/types';
 import { BundleAnmation } from '@/ui/components/BundleAnimation';
 import { GameObjects, Physics, Scene } from 'phaser';
@@ -215,13 +214,7 @@ export class Shooting extends Scene {
     }
   }
 
-  activateBundle(key: IBundle) {
-    if (this.enemies) {
-      const bundle = getBundleConfig(key);
-
-      new BundleAnmation(this, bundle);
-    }
-  }
+  activateBundle(key: IBundle) {}
 
   public createBackground() {
     this.add.image(0, 0, 'shootingBackground').setOrigin(0).setScale(0.5);
