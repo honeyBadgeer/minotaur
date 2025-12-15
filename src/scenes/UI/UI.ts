@@ -46,11 +46,8 @@ export class UIScene extends Scene {
   }
 
   create() {
-    this.createUI();
-    this.createRulesButton();
-    this.createExitButton();
-    this.createPointerSightDefault();
-    this.createPointerSightAnimated();
+    this.createBackground();
+    this.createSoundButton();
   }
 
   createEventlisteners() {
@@ -273,8 +270,16 @@ export class UIScene extends Scene {
     });
   }
 
+  createBackground() {
+    this.add
+      .image(0, 0, 'background')
+      .setOrigin(0)
+      .setDisplaySize(1440, 810)
+      .setDepth(0);
+  }
+
   createSoundButton() {
-    const soundButton = new IconButton(
+    this.soundButton = new IconButton(
       this,
       0,
       0,
@@ -294,16 +299,18 @@ export class UIScene extends Scene {
       }
     );
 
-    soundButton.setPosition(
-      this.sys.canvas.width + 50,
-      soundButton.height / 2 + 128
-    );
+    this.soundButton
+      .setPosition(
+        this.sys.canvas.width + 50,
+        this.soundButton.height / 2 + 128
+      )
+      .setDepth(1000);
 
     this.tweens.add({
-      targets: soundButton,
+      targets: this.soundButton,
       x: {
         from: this.sys.canvas.width + 50,
-        to: this.sys.canvas.width - soundButton.width / 2 - 26,
+        to: this.sys.canvas.width - this.soundButton.width / 2 - 26,
       },
       duration: 300,
       ease: 'Quad.Out',

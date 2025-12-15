@@ -241,6 +241,8 @@ class GameController {
 
   private handleOnStart() {
     this.sceneManager.runMinosScene();
+    this.view.renderStartScene();
+    this.sceneManager.stop('PreloadScene');
   }
 
   private handleOnStartShooting(character: CharacterModel) {

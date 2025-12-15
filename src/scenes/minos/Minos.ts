@@ -19,7 +19,6 @@ export class Minos extends Scene {
   }
 
   create() {
-    this.createBackground();
     this.createFrontFrame();
     this.createSymbols();
   }
@@ -44,14 +43,6 @@ export class Minos extends Scene {
         return newSymbol;
       });
     });
-  }
-
-  createBackground() {
-    this.add
-      .image(0, 0, 'background')
-      .setOrigin(0)
-      .setDisplaySize(1440, 810)
-      .setDepth(-1);
   }
 
   createFrontFrame() {

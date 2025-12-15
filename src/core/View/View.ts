@@ -23,10 +23,6 @@ export class View {
   }
 
   renderStartScene() {
-    this.sceneManager.stopAll();
-    this.sceneManager.runStartScene();
-    this.startScene = this.sceneManager.getScene('StartScene');
-
     this.sceneManager.runUIScene();
     this.uiScene = this.sceneManager.getScene('UIScene');
     this.uiScene.destroyEventlisteners();
