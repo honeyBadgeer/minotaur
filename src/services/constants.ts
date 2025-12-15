@@ -73,6 +73,7 @@ const preloadSpritesMap: Record<string, string> = {
   polygonActive: 'assets/sprites/onboarding/polygon-active.png',
   bookmark: 'assets/sprites/onboarding/bookmark.svg',
   arm: 'assets/sprites/onboarding/arm.png',
+  frontFrame: 'assets/sprites/front_frame.png',
 };
 
 const preloadSvg: Record<string, string> = {

@@ -10,7 +10,7 @@ export class Symbol extends GameObjects.Container {
   constructor(scene: Scene, type: SymbolType, x: number, y: number) {
     super(scene, 0, 0);
 
-    this.setScale(0.7);
+    this.setScale(0.8);
 
     this.scene = scene;
     this.symbolType = type;
