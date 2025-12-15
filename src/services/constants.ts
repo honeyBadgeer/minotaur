@@ -95,24 +95,80 @@ const preloadSpriteSheet: Record<
 > = {};
 
 const preloadSpines: Record<string, { json: string; atlas: string }> = {
-  shield: {
-    json: 'assets/spines/shield/skeleton.json',
-    atlas: 'assets/spines/shield/skeleton.atlas',
+  monster: {
+    json: 'assets/spines/monster/skeleton.json',
+    atlas: 'assets/spines/monster/skeleton.atlas',
   },
-  qSymbol: {
-    json: 'assets/spines/q/skeleton.json',
-    atlas: 'assets/spines/q/skeleton.atlas',
+  mouse: {
+    json: 'assets/spines/mouse/skeleton.json',
+    atlas: 'assets/spines/mouse/skeleton.atlas',
+  },
+  panther: {
+    json: 'assets/spines/panther/skeleton.json',
+    atlas: 'assets/spines/panther/skeleton.atlas',
+  },
+  ram: {
+    json: 'assets/spines/ram/skeleton.json',
+    atlas: 'assets/spines/ram/skeleton.atlas',
+  },
+  snake: {
+    json: 'assets/spines/snake/skeleton.json',
+    atlas: 'assets/spines/snake/skeleton.atlas',
+  },
+  squirrel: {
+    json: 'assets/spines/squirrel/skeleton.json',
+    atlas: 'assets/spines/squirrel/skeleton.atlas',
+  },
+  tiger: {
+    json: 'assets/spines/tiger/skeleton.json',
+    atlas: 'assets/spines/tiger/skeleton.atlas',
+  },
+  turtle: {
+    json: 'assets/spines/turtle/skeleton.json',
+    atlas: 'assets/spines/turtle/skeleton.atlas',
+  },
+  zebra: {
+    json: 'assets/spines/zebra/skeleton.json',
+    atlas: 'assets/spines/zebra/skeleton.atlas',
   },
 };
 
 const SYMBOLS_CONFIG: TSymbolsConfig[] = [
   {
-    key: 'shield',
+    key: 'monster',
     value: 0,
   },
   {
-    key: 'qSymbol',
+    key: 'mouse',
     value: 1,
+  },
+  {
+    key: 'panther',
+    value: 2,
+  },
+  {
+    key: 'ram',
+    value: 3,
+  },
+  {
+    key: 'snake',
+    value: 4,
+  },
+  {
+    key: 'squirrel',
+    value: 5,
+  },
+  {
+    key: 'tiger',
+    value: 6,
+  },
+  {
+    key: 'zebra',
+    value: 7,
+  },
+  {
+    key: 'turtle',
+    value: 8,
   },
 ];
 

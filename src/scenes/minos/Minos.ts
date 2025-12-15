@@ -9,11 +9,11 @@ export class Minos extends Scene {
     super('Minos');
 
     this.winCombination = [
-      [0, 0, 0],
-      [0, 1, 0],
-      [0, 0, 1],
-      [0, 1, 0],
-      [1, 0, 0],
+      [0, 1, 9],
+      [8, 2, 3],
+      [0, 0, 4],
+      [0, 5, 7],
+      [1, 6, 0],
     ];
   }
 

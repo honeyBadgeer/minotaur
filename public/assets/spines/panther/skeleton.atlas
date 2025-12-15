@@ -1,0 +1,278 @@
+skeleton.png
+size: 1026,1026
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Пантера/Пантера00
+  rotate: false
+  xy: 629, 506
+  size: 139, 114
+  orig: 165, 162
+  offset: 10, 15
+  index: -1
+Пантера/Пантера01
+  rotate: false
+  xy: 629, 506
+  size: 139, 114
+  orig: 165, 162
+  offset: 10, 15
+  index: -1
+Пантера/Пантера02
+  rotate: false
+  xy: 629, 506
+  size: 139, 114
+  orig: 165, 162
+  offset: 10, 15
+  index: -1
+Пантера/Пантера03
+  rotate: false
+  xy: 629, 506
+  size: 139, 114
+  orig: 165, 162
+  offset: 10, 15
+  index: -1
+Пантера/Пантера04
+  rotate: false
+  xy: 629, 506
+  size: 139, 114
+  orig: 165, 162
+  offset: 10, 15
+  index: -1
+Пантера/Пантера05
+  rotate: false
+  xy: 488, 505
+  size: 139, 114
+  orig: 165, 162
+  offset: 10, 15
+  index: -1
+Пантера/Пантера06
+  rotate: false
+  xy: 770, 505
+  size: 139, 114
+  orig: 165, 162
+  offset: 10, 15
+  index: -1
+Пантера/Пантера07
+  rotate: false
+  xy: 805, 621
+  size: 139, 115
+  orig: 165, 162
+  offset: 10, 15
+  index: -1
+Пантера/Пантера08
+  rotate: false
+  xy: 629, 622
+  size: 139, 116
+  orig: 165, 162
+  offset: 10, 15
+  index: -1
+Пантера/Пантера09
+  rotate: false
+  xy: 2, 498
+  size: 139, 117
+  orig: 165, 162
+  offset: 10, 15
+  index: -1
+Пантера/Пантера10
+  rotate: false
+  xy: 488, 621
+  size: 139, 117
+  orig: 165, 162
+  offset: 10, 15
+  index: -1
+Пантера/Пантера11
+  rotate: false
+  xy: 154, 499
+  size: 139, 118
+  orig: 165, 162
+  offset: 10, 15
+  index: -1
+Пантера/Пантера12
+  rotate: false
+  xy: 154, 619
+  size: 143, 120
+  orig: 165, 162
+  offset: 9, 15
+  index: -1
+Пантера/Пантера13
+  rotate: false
+  xy: 2, 617
+  size: 150, 123
+  orig: 165, 162
+  offset: 5, 15
+  index: -1
+Пантера/Пантера14
+  rotate: false
+  xy: 329, 615
+  size: 157, 125
+  orig: 165, 162
+  offset: 1, 15
+  index: -1
+Пантера/Пантера15
+  rotate: false
+  xy: 2, 742
+  size: 152, 126
+  orig: 165, 162
+  offset: 8, 15
+  index: -1
+Пантера/Пантера16
+  rotate: false
+  xy: 169, 741
+  size: 158, 130
+  orig: 165, 162
+  offset: 5, 15
+  index: -1
+Пантера/Пантера17
+  rotate: false
+  xy: 336, 742
+  size: 164, 133
+  orig: 165, 162
+  offset: 1, 15
+  index: -1
+Пантера/Пантера18
+  rotate: false
+  xy: 503, 740
+  size: 163, 136
+  orig: 165, 162
+  offset: 0, 15
+  index: -1
+Пантера/Пантера19
+  rotate: false
+  xy: 670, 740
+  size: 164, 138
+  orig: 165, 162
+  offset: 1, 15
+  index: -1
+Пантера/Пантера20
+  rotate: false
+  xy: 837, 738
+  size: 165, 141
+  orig: 165, 162
+  offset: 0, 15
+  index: -1
+Пантера/Пантера21
+  rotate: false
+  xy: 837, 881
+  size: 164, 143
+  orig: 165, 162
+  offset: 1, 15
+  index: -1
+Пантера/Пантера22
+  rotate: false
+  xy: 503, 878
+  size: 165, 146
+  orig: 165, 162
+  offset: 0, 15
+  index: -1
+Пантера/Пантера23
+  rotate: false
+  xy: 670, 880
+  size: 165, 144
+  orig: 165, 162
+  offset: 0, 14
+  index: -1
+Пантера/Пантера24
+  rotate: false
+  xy: 336, 877
+  size: 165, 147
+  orig: 165, 162
+  offset: 0, 13
+  index: -1
+Пантера/Пантера25
+  rotate: false
+  xy: 169, 873
+  size: 165, 151
+  orig: 165, 162
+  offset: 0, 11
+  index: -1
+Пантера/Пантера26
+  rotate: false
+  xy: 2, 870
+  size: 165, 154
+  orig: 165, 162
+  offset: 0, 8
+  index: -1
+Пантера/Пантера27
+  rotate: false
+  xy: 1003, 1023
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Пантера/Пантера28
+  rotate: false
+  xy: 1003, 1023
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Пантера/Пантера29
+  rotate: false
+  xy: 1003, 1023
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Пантера/Пантера30
+  rotate: false
+  xy: 1003, 1023
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Пантера/Пантера31
+  rotate: false
+  xy: 1003, 1023
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+задняя лапа зад
+  rotate: false
+  xy: 299, 692
+  size: 28, 47
+  orig: 28, 47
+  offset: 0, 0
+  index: -1
+задняя лапа перед
+  rotate: true
+  xy: 911, 533
+  size: 39, 69
+  orig: 39, 69
+  offset: 0, 0
+  index: -1
+передняя лапа зад
+  rotate: false
+  xy: 982, 508
+  size: 40, 64
+  orig: 40, 64
+  offset: 0, 0
+  index: -1
+передняя лапаперед
+  rotate: false
+  xy: 770, 654
+  size: 33, 84
+  orig: 33, 84
+  offset: 0, 0
+  index: -1
+тело
+  rotate: true
+  xy: 946, 625
+  size: 111, 78
+  orig: 117, 78
+  offset: 6, 0
+  index: -1
+хвост 2
+  rotate: true
+  xy: 946, 574
+  size: 49, 56
+  orig: 49, 56
+  offset: 0, 0
+  index: -1
+хвост1
+  rotate: true
+  xy: 911, 496
+  size: 35, 63
+  orig: 35, 63
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,264 @@
+skeleton.png
+size: 856,856
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Монстр/Монстр00
+  rotate: false
+  xy: 640, 16
+  size: 176, 122
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр01
+  rotate: false
+  xy: 640, 16
+  size: 176, 122
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр02
+  rotate: false
+  xy: 640, 16
+  size: 176, 122
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр03
+  rotate: false
+  xy: 640, 16
+  size: 176, 122
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр04
+  rotate: false
+  xy: 640, 16
+  size: 176, 122
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр05
+  rotate: false
+  xy: 640, 16
+  size: 176, 122
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр06
+  rotate: false
+  xy: 640, 16
+  size: 176, 122
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр07
+  rotate: false
+  xy: 640, 16
+  size: 176, 122
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр08
+  rotate: false
+  xy: 640, 16
+  size: 176, 122
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр09
+  rotate: false
+  xy: 180, 176
+  size: 176, 122
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр10
+  rotate: false
+  xy: 404, 18
+  size: 176, 127
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр11
+  rotate: false
+  xy: 2, 177
+  size: 176, 131
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр12
+  rotate: false
+  xy: 2, 9
+  size: 176, 136
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр13
+  rotate: true
+  xy: 706, 500
+  size: 176, 140
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр14
+  rotate: true
+  xy: 706, 678
+  size: 176, 145
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр15
+  rotate: false
+  xy: 2, 310
+  size: 176, 149
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр16
+  rotate: false
+  xy: 643, 140
+  size: 177, 154
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр17
+  rotate: false
+  xy: 462, 147
+  size: 179, 158
+  orig: 242, 238
+  offset: 23, 33
+  index: -1
+Монстр/Монстр18
+  rotate: false
+  xy: 224, 300
+  size: 184, 164
+  orig: 242, 238
+  offset: 22, 33
+  index: -1
+Монстр/Монстр19
+  rotate: false
+  xy: 469, 307
+  size: 193, 167
+  orig: 242, 238
+  offset: 18, 33
+  index: -1
+Монстр/Монстр20
+  rotate: true
+  xy: 682, 296
+  size: 202, 172
+  orig: 242, 238
+  offset: 14, 33
+  index: -1
+Монстр/Монстр21
+  rotate: false
+  xy: 469, 476
+  size: 211, 176
+  orig: 242, 238
+  offset: 10, 33
+  index: -1
+Монстр/Монстр22
+  rotate: false
+  xy: 2, 461
+  size: 220, 182
+  orig: 242, 238
+  offset: 6, 31
+  index: -1
+Монстр/Монстр23
+  rotate: false
+  xy: 237, 466
+  size: 230, 191
+  orig: 242, 238
+  offset: 1, 26
+  index: -1
+Монстр/Монстр24
+  rotate: false
+  xy: 479, 654
+  size: 225, 200
+  orig: 242, 238
+  offset: 6, 21
+  index: -1
+Монстр/Монстр25
+  rotate: false
+  xy: 2, 645
+  size: 233, 209
+  orig: 242, 238
+  offset: 3, 16
+  index: -1
+Монстр/Монстр26
+  rotate: false
+  xy: 237, 659
+  size: 240, 195
+  orig: 242, 238
+  offset: 0, 12
+  index: -1
+Монстр/Монстр27
+  rotate: false
+  xy: 853, 853
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Монстр/Монстр28
+  rotate: false
+  xy: 853, 853
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Монстр/Монстр29
+  rotate: false
+  xy: 853, 853
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Монстр/Монстр30
+  rotate: false
+  xy: 853, 853
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Монстр/Монстр31
+  rotate: false
+  xy: 853, 853
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+задняя лапа перед
+  rotate: false
+  xy: 410, 285
+  size: 50, 80
+  orig: 50, 80
+  offset: 0, 0
+  index: -1
+задняя лапа перед-1
+  rotate: false
+  xy: 180, 402
+  size: 38, 57
+  orig: 38, 57
+  offset: 0, 0
+  index: -1
+передняя лапа зад
+  rotate: false
+  xy: 582, 82
+  size: 56, 63
+  orig: 56, 63
+  offset: 0, 0
+  index: -1
+передняя лапа перед
+  rotate: false
+  xy: 410, 367
+  size: 48, 97
+  orig: 48, 97
+  offset: 0, 0
+  index: -1
+тело
+  rotate: false
+  xy: 180, 38
+  size: 222, 107
+  orig: 222, 114
+  offset: 0, 7
+  index: -1

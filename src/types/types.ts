@@ -5,7 +5,16 @@ export interface IAtlasData {
   imageUrl: string;
 }
 
-export type SymbolType = 'shield' | 'qSymbol';
+export type SymbolType =
+  | 'monster'
+  | 'mouse'
+  | 'panther'
+  | 'ram'
+  | 'snake'
+  | 'squirrel'
+  | 'tiger'
+  | 'turtle'
+  | 'zebra';
 
 export interface IMultiAtlasData {
   jsonUrl: string;
