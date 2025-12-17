@@ -61,8 +61,6 @@ export class View {
         Phaser.Math.Between(1, 9),
       ],
     ]);
-
-    this.minosScene.createSymbols();
   }
 
   renderCarousel(carouselIndex: number) {

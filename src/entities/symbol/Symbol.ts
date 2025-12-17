@@ -27,7 +27,5 @@ export class Symbol extends GameObjects.Container {
     this.add(this.spineInstance as SpineGameObject);
 
     this.spineInstance.animationState.setAnimation(0, 'moving', true);
-
-    this.setDepth(10);
   }
 }
