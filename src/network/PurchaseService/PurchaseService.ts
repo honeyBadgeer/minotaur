@@ -54,8 +54,12 @@ export class PurchaseService {
     this.bundleKey = key;
   }
 
-  private handleBuyTicket({ beastMode, enemyId }: BuyTicketProps) {
-    this.buyTicket(beastMode, enemyId);
+  private handleBuyTicket() {
+    this.ws.send(
+      `0`,
+      () => console.log('sent'),
+      () => console.error('failed')
+    );
   }
 
   handleTicket(data: WSTicket) {
@@ -69,21 +73,13 @@ export class PurchaseService {
   }
 
   handleDefaultTicket(data: WSTicket) {
-    const id = data.objectID;
-    const action = data.win_amount > 0 ? 'hit' : 'miss';
-    const winSum = mdeToNormal(data.win_amount);
-    const balance = data.balance;
+    const rows = data.rows?.slice(0, 5);
 
-    eventBus.emit(PurchaseEvents.UPDATE_WIN_SUM, {
-      type: 'ticket',
-      winSum: data.win_amount,
+    const combination = rows?.map((i) => {
+      return i.pictures.slice(0, 3);
     });
-    eventBus.emit(PurchaseEvents.ENEMY_HIT_RESPONSE, {
-      id,
-      action,
-      winSum,
-    });
-    eventBus.emit(PurchaseEvents.UPDATE_BALANCE, balance);
+
+    eventBus.emit('animateSymbol', combination);
   }
 
   handleBundleTicket(data: WSTicket) {

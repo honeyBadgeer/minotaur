@@ -16,6 +16,7 @@ import { t } from '@/i18n';
 import { modeButtonStates } from '@/ui/components/ControlBar/lib/constants';
 import { SightPointer } from '@/entities/SightPointer';
 import { isMobile } from '@/services/lib/isMobile';
+import { PurchaseEvents } from '@/network/PurchaseService/PurchaseService';
 
 const animatedPointerDuration = 300;
 
@@ -284,7 +285,7 @@ export class UIScene extends Scene {
       0,
       0,
       {
-        onUp: () => eventBus.emit('animateSymbol'),
+        onUp: () => eventBus.emit(PurchaseEvents.BUY_TICKET),
         onOver: () => this.events.emit(GameEvents.UPDATE_CURSOR, 'pointer'),
         onOut: () => this.events.emit(GameEvents.UPDATE_CURSOR, 'none'),
       },

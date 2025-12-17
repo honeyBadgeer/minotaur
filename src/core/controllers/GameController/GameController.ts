@@ -163,8 +163,9 @@ class GameController {
     eventBus.on('animateSymbol', this.animateSymbol, this);
   }
 
-  private animateSymbol() {
-    this.view.minosScene.handleAnimate();
+  private animateSymbol(value: number[][] | undefined) {
+    if (!value) return;
+    this.view.minosScene.handleAnimate(value);
   }
 
   private handleOnError(error: TError) {
@@ -238,6 +239,8 @@ class GameController {
 
   private handleOnStart() {
     this.view.renderStartScene();
+
+    this.purchaseService.subscribe();
   }
 
   private handleOnStartShooting(character: CharacterModel) {

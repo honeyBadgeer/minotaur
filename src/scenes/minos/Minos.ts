@@ -40,38 +40,12 @@ export class Minos extends Scene {
     });
   }
 
-  handleAnimate() {
+  handleAnimate(newCombination: number[][]) {
     this.handleSetMask();
 
     this.handleAnimateOut();
 
-    this.handleAnimateIn([
-      [
-        Phaser.Math.Between(1, 9),
-        Phaser.Math.Between(1, 9),
-        Phaser.Math.Between(1, 9),
-      ],
-      [
-        Phaser.Math.Between(1, 9),
-        Phaser.Math.Between(1, 9),
-        Phaser.Math.Between(1, 9),
-      ],
-      [
-        Phaser.Math.Between(1, 9),
-        Phaser.Math.Between(1, 9),
-        Phaser.Math.Between(1, 9),
-      ],
-      [
-        Phaser.Math.Between(1, 9),
-        Phaser.Math.Between(1, 9),
-        Phaser.Math.Between(1, 9),
-      ],
-      [
-        Phaser.Math.Between(1, 9),
-        Phaser.Math.Between(1, 9),
-        Phaser.Math.Between(1, 9),
-      ],
-    ]);
+    this.handleAnimateIn(newCombination);
   }
 
   private handleAnimateOut() {

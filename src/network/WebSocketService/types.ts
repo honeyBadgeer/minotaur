@@ -40,6 +40,7 @@ export interface WSTicketWinState {
   ticketNumber: string;
   win_amount: number;
   beastMode: BeastMode;
+  pictures: number[];
 }
 
 export interface WSTicket {
