@@ -284,9 +284,7 @@ export class UIScene extends Scene {
       0,
       0,
       {
-        onUp: () => {
-          SoundManager.setMuted();
-        },
+        onUp: () => eventBus.emit('animateSymbol'),
         onOver: () => this.events.emit(GameEvents.UPDATE_CURSOR, 'pointer'),
         onOut: () => this.events.emit(GameEvents.UPDATE_CURSOR, 'none'),
       },

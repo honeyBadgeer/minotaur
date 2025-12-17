@@ -6,6 +6,7 @@ import type { EnemyType, IBundle } from '@/types/types';
 import type { BulletEntity } from '@/entities/Bullet/BulletEntity';
 import type { Player } from '@/entities/Player';
 import type { EnemyEntity } from '@/entities/Enemy/EnemyEntity';
+import type { Minos } from '@/scenes/minos/Minos';
 
 export class View {
   sceneManager: SceneManager;
@@ -13,6 +14,7 @@ export class View {
   shootingScene: Shooting;
   preloadScene: PreloadScene;
   startScene: StartScene;
+  minosScene: Minos;
 
   constructor(sceneManager: SceneManager) {
     this.sceneManager = sceneManager;
@@ -20,12 +22,17 @@ export class View {
     this.shootingScene = this.sceneManager.getScene('ShootingScene');
     this.preloadScene = this.sceneManager.getScene('PreloadScene');
     this.startScene = this.sceneManager.getScene('StartScene');
+    this.minosScene = this.sceneManager.getScene('Minos');
   }
 
   renderStartScene() {
+    this.sceneManager.stop('PreloadScene');
     this.sceneManager.runUIScene();
     this.uiScene = this.sceneManager.getScene('UIScene');
     this.uiScene.destroyEventlisteners();
+
+    this.sceneManager.runMinosScene();
+    this.minosScene = this.sceneManager.getScene('Minos');
   }
 
   renderCarousel(carouselIndex: number) {

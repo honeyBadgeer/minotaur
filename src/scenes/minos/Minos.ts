@@ -5,12 +5,13 @@ import { GameObjects, Scene } from 'phaser';
 export class Minos extends Scene {
   private winCombination: number[][] = [];
   private symbolContainer: GameObjects.Container | null = null;
+  private firstColumn: Symbol[] = [];
 
   constructor() {
     super('Minos');
 
     this.winCombination = [
-      [0, 1, 9],
+      [1, 1, 9],
       [8, 2, 3],
       [0, 0, 4],
       [0, 5, 7],
@@ -21,6 +22,15 @@ export class Minos extends Scene {
   create() {
     this.createFrontFrame();
     this.createSymbols();
+  }
+
+  handleAnimate() {
+    this.tweens.add({
+      targets: this.firstColumn,
+      y: this.game.canvas.height + 500,
+      duration: 4000,
+      ease: 'Back.easeInOut',
+    });
   }
 
   createSymbols() {
@@ -39,6 +49,10 @@ export class Minos extends Scene {
         const posY = startY + colIdx * offsetY;
 
         const newSymbol = new Symbol(this, type, posX, posY);
+
+        if (rowIdx === 0) {
+          this.firstColumn.push(newSymbol);
+        }
 
         return newSymbol;
       });

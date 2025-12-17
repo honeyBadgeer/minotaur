@@ -161,6 +161,11 @@ class GameController {
     eventBus.on(BetEvents.Increase, this.betService.increase);
     eventBus.on(BetEvents.Decrease, this.betService.decrease);
     eventBus.on(BetEvents.BetChanged, this.handlerBetChanged, this);
+    eventBus.on('animateSymbol', this.animateSymbol, this);
+  }
+
+  private animateSymbol() {
+    this.view.minosScene.handleAnimate();
   }
 
   private handleOnError(error: TError) {
@@ -240,9 +245,7 @@ class GameController {
   };
 
   private handleOnStart() {
-    this.sceneManager.runMinosScene();
     this.view.renderStartScene();
-    this.sceneManager.stop('PreloadScene');
   }
 
   private handleOnStartShooting(character: CharacterModel) {
