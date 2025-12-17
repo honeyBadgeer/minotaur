@@ -130,7 +130,6 @@ class GameController {
     eventBus.on(CoreEvents.ExitGame, this.handlerOnExit, this);
     eventBus.on(CoreEvents.AppError, this.handleOnError, this);
     eventBus.on(WSEvents.MESSAGE, this.handleChangeState, this);
-    eventBus.on(DialogEvents.ShowOnboarding, this.handleShowOnboarding, this);
   }
 
   initScenesEvents() {
@@ -219,13 +218,6 @@ class GameController {
   private handleChangeState(data: WSData) {
     if (data.state === WSStates.OK && this.view.uiScene)
       this.view.uiScene.setMainPrize(data.maxPrizeMDE);
-  }
-
-  private handleShowOnboarding() {
-    const rulesUrl = this.model.getWSData()?.rulesUrl;
-
-    this.dialogManager.showOnboarding(rulesUrl);
-    this.view.uiScene.clearHowToPlay();
   }
 
   private handlePreloadCreate() {

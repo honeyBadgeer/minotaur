@@ -33,6 +33,36 @@ export class View {
 
     this.sceneManager.runMinosScene();
     this.minosScene = this.sceneManager.getScene('Minos');
+
+    this.minosScene.initCombination([
+      [
+        Phaser.Math.Between(1, 9),
+        Phaser.Math.Between(1, 9),
+        Phaser.Math.Between(1, 9),
+      ],
+      [
+        Phaser.Math.Between(1, 9),
+        Phaser.Math.Between(1, 9),
+        Phaser.Math.Between(1, 9),
+      ],
+      [
+        Phaser.Math.Between(1, 9),
+        Phaser.Math.Between(1, 9),
+        Phaser.Math.Between(1, 9),
+      ],
+      [
+        Phaser.Math.Between(1, 9),
+        Phaser.Math.Between(1, 9),
+        Phaser.Math.Between(1, 9),
+      ],
+      [
+        Phaser.Math.Between(1, 9),
+        Phaser.Math.Between(1, 9),
+        Phaser.Math.Between(1, 9),
+      ],
+    ]);
+
+    this.minosScene.createSymbols();
   }
 
   renderCarousel(carouselIndex: number) {

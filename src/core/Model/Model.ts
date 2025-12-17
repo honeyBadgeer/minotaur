@@ -30,6 +30,7 @@ interface ModelState {
     id: string;
     winAmount: number;
   } | null;
+  combination: number[][];
 }
 
 const initialState: ModelState = {
@@ -53,6 +54,7 @@ const initialState: ModelState = {
   demoCount: 0,
   demoBundleCount: 0,
   doubleTickets: null,
+  combination: [],
 };
 
 class Model {
@@ -68,6 +70,13 @@ class Model {
   }
   private getState(): Readonly<ModelState> {
     return this._state;
+  }
+
+  public getCombination() {
+    return this.getState().combination;
+  }
+  public setCombination(value: number[][]) {
+    this.updateState({ combination: value });
   }
 
   private onMessage = (data: WSData) => {

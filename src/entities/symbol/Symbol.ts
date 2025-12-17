@@ -10,7 +10,7 @@ export class Symbol extends GameObjects.Container {
   constructor(scene: Scene, type: SymbolType, x: number, y: number) {
     super(scene, 0, 0);
 
-    this.setScale(0.8);
+    this.setScale(0.85);
 
     this.scene = scene;
     this.symbolType = type;
@@ -27,5 +27,7 @@ export class Symbol extends GameObjects.Container {
     this.add(this.spineInstance as SpineGameObject);
 
     this.spineInstance.animationState.setAnimation(0, 'moving', true);
+
+    this.setDepth(10);
   }
 }
