@@ -4,11 +4,11 @@ import { GameObjects, Scene } from 'phaser';
 
 export class Minos extends Scene {
   private symbolContainer: GameObjects.Container | null = null;
-  private firstColumn: Symbol[] = [];
-  private secondColumn: Symbol[] = [];
-  private thirdColumn: Symbol[] = [];
-  private fourthColumn: Symbol[] = [];
-  private fifthColumn: Symbol[] = [];
+  private firstColumn: GameObjects.Container | null = null;
+  private secondColumn: GameObjects.Container | null = null;
+  private thirdColumn: GameObjects.Container | null = null;
+  private fourthColumn: GameObjects.Container | null = null;
+  private fifthColumn: GameObjects.Container | null = null;
 
   constructor() {
     super('Minos');
@@ -20,6 +20,25 @@ export class Minos extends Scene {
 
   initCombination(value: number[][]) {
     this.symbolContainer = this.add.container(250, 160);
+
+    this.fifthColumn = this.add.container(0, 0);
+    this.fifthColumn.name = 'fifthColumn';
+    this.fourthColumn = this.add.container(0, 0);
+    this.fourthColumn.name = 'fourthColumn';
+    this.thirdColumn = this.add.container(0, 0);
+    this.thirdColumn.name = 'thirdColumn';
+    this.secondColumn = this.add.container(0, 0);
+    this.secondColumn.name = 'secondColumn';
+    this.firstColumn = this.add.container(0, 0);
+    this.firstColumn.name = 'firstColumn';
+
+    this.symbolContainer?.add([
+      this.firstColumn,
+      this.secondColumn,
+      this.thirdColumn,
+      this.fourthColumn,
+      this.fifthColumn,
+    ]);
 
     const offsetX = 280;
     const offsetY = 280;
@@ -50,19 +69,19 @@ export class Minos extends Scene {
 
   private handleSetColumns(rowIdx: number, symbol: Symbol) {
     if (rowIdx === 0) {
-      this.firstColumn.push(symbol);
+      this.firstColumn?.add(symbol);
     }
     if (rowIdx === 1) {
-      this.secondColumn.push(symbol);
+      this.secondColumn?.add(symbol);
     }
     if (rowIdx === 2) {
-      this.thirdColumn.push(symbol);
+      this.thirdColumn?.add(symbol);
     }
     if (rowIdx === 3) {
-      this.fourthColumn.push(symbol);
+      this.fourthColumn?.add(symbol);
     }
     if (rowIdx === 4) {
-      this.fifthColumn.push(symbol);
+      this.fifthColumn?.add(symbol);
     }
   }
 
@@ -112,11 +131,18 @@ export class Minos extends Scene {
   private handleAnimateIn(newCombination: number[][]) {
     const offsetX = 280;
     const offsetY = 280;
-    const newFirstColumn: Symbol[] = [];
-    const newSecondColumn: Symbol[] = [];
-    const newThirdColumn: Symbol[] = [];
-    const newFourthColumn: Symbol[] = [];
-    const newFifthColumn: Symbol[] = [];
+    const newFirstColumn = this.add.container(0, -600);
+    const newSecondColumn = this.add.container(0, -600);
+    const newThirdColumn = this.add.container(0, -600);
+    const newFourthColumn = this.add.container(0, -600);
+    const newFifthColumn = this.add.container(0, -600);
+    this.symbolContainer?.add([
+      newFifthColumn,
+      newFourthColumn,
+      newThirdColumn,
+      newSecondColumn,
+      newFirstColumn,
+    ]);
 
     newCombination.map((row, rowIdx) => {
       row.map((symbol, colIdx) => {
@@ -130,19 +156,19 @@ export class Minos extends Scene {
         this.symbolContainer?.add(newSymbol);
 
         if (rowIdx === 0) {
-          newFirstColumn.push(newSymbol);
+          newFirstColumn.add(newSymbol);
         }
         if (rowIdx === 1) {
-          newSecondColumn.push(newSymbol);
+          newSecondColumn.add(newSymbol);
         }
         if (rowIdx === 2) {
-          newThirdColumn.push(newSymbol);
+          newThirdColumn.add(newSymbol);
         }
         if (rowIdx === 3) {
-          newFourthColumn.push(newSymbol);
+          newFourthColumn.add(newSymbol);
         }
         if (rowIdx === 4) {
-          newFifthColumn.push(newSymbol);
+          newFifthColumn.add(newSymbol);
         }
       });
     });
@@ -155,22 +181,30 @@ export class Minos extends Scene {
         delay: 0,
         ease: 'Back.easeInOut',
         onComplete: () => {
-          this.firstColumn.forEach((i) => i.destroy());
-          this.firstColumn = [];
-          this.firstColumn = newFirstColumn;
+          this.firstColumn?.removeAll(true);
+          const children = newFirstColumn.list.slice();
+          children.forEach((child) => {
+            this.firstColumn!.add(child);
+          });
+          newFirstColumn.destroy();
+          this.firstColumn?.setY(0);
         },
       },
       {
         targets: newSecondColumn,
         y: { from: -600, to: 0 },
         duration: 1000,
+        delay: 100,
         ease: 'Back.easeInOut',
         onComplete: () => {
-          this.secondColumn.forEach((i) => i.destroy());
-          this.secondColumn = [];
-          this.secondColumn = newSecondColumn;
+          this.secondColumn?.removeAll(true);
+          const children = newSecondColumn.list.slice();
+          children.forEach((child) => {
+            this.secondColumn!.add(child);
+          });
+          newSecondColumn.destroy();
+          this.secondColumn?.setY(0);
         },
-        delay: 100,
       },
       {
         targets: newThirdColumn,
@@ -179,9 +213,13 @@ export class Minos extends Scene {
         delay: 200,
         ease: 'Back.easeInOut',
         onComplete: () => {
-          this.thirdColumn.forEach((i) => i.destroy());
-          this.thirdColumn = [];
-          this.thirdColumn = newThirdColumn;
+          this.thirdColumn?.removeAll(true);
+          const children = newThirdColumn.list.slice();
+          children.forEach((child) => {
+            this.thirdColumn!.add(child);
+          });
+          newThirdColumn.destroy();
+          this.thirdColumn?.setY(0);
         },
       },
       {
@@ -191,9 +229,16 @@ export class Minos extends Scene {
         delay: 300,
         ease: 'Back.easeInOut',
         onComplete: () => {
-          this.fourthColumn.forEach((i) => i.destroy());
-          this.fourthColumn = [];
-          this.fourthColumn = newFourthColumn;
+          this.fourthColumn?.removeAll(true);
+
+          const children = newFourthColumn.list.slice();
+
+          children.forEach((child) => {
+            this.fourthColumn!.add(child);
+          });
+
+          newFourthColumn.destroy();
+          this.fourthColumn?.setY(0);
         },
       },
       {
@@ -203,9 +248,16 @@ export class Minos extends Scene {
         delay: 400,
         ease: 'Back.easeInOut',
         onComplete: () => {
-          this.fifthColumn.forEach((i) => i.destroy());
-          this.fifthColumn = [];
-          this.fifthColumn = newFifthColumn;
+          this.fifthColumn?.removeAll(true);
+
+          const children = newFifthColumn.list.slice();
+
+          children.forEach((child) => {
+            this.fifthColumn!.add(child);
+          });
+
+          newFifthColumn.destroy();
+          this.fifthColumn?.setY(0);
         },
       },
     ]);
