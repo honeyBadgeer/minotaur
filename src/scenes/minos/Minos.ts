@@ -13,6 +13,13 @@ export class Minos extends Scene {
     fourth: null,
     fifth: null,
   };
+  private hideColumns: Record<Columns, GameObjects.Container | null> = {
+    first: null,
+    second: null,
+    third: null,
+    fourth: null,
+    fifth: null,
+  };
 
   constructor() {
     super('Minos');
@@ -119,18 +126,6 @@ export class Minos extends Scene {
   private handleAnimateIn(newCombination: number[][]) {
     const offsetX = 280;
     const offsetY = 280;
-    const newFirstColumn = this.add.container(0, -600);
-    const newSecondColumn = this.add.container(0, -600);
-    const newThirdColumn = this.add.container(0, -600);
-    const newFourthColumn = this.add.container(0, -600);
-    const newFifthColumn = this.add.container(0, -600);
-    this.symbolsContainer?.add([
-      newFifthColumn,
-      newFourthColumn,
-      newThirdColumn,
-      newSecondColumn,
-      newFirstColumn,
-    ]);
 
     newCombination.map((row, rowIdx) => {
       row.map((symbol, colIdx) => {
@@ -144,74 +139,77 @@ export class Minos extends Scene {
         this.symbolsContainer?.add(newSymbol);
 
         if (rowIdx === 0) {
-          newFirstColumn.add(newSymbol);
+          this.hideColumns.first?.add(newSymbol);
         }
         if (rowIdx === 1) {
-          newSecondColumn.add(newSymbol);
+          this.hideColumns.second?.add(newSymbol);
         }
         if (rowIdx === 2) {
-          newThirdColumn.add(newSymbol);
+          this.hideColumns.third?.add(newSymbol);
         }
         if (rowIdx === 3) {
-          newFourthColumn.add(newSymbol);
+          this.hideColumns.fourth?.add(newSymbol);
         }
         if (rowIdx === 4) {
-          newFifthColumn.add(newSymbol);
+          this.hideColumns.fifth?.add(newSymbol);
         }
       });
     });
 
     this.tweens.addMultiple([
       {
-        targets: newFirstColumn,
+        targets: this.hideColumns.first,
         y: { from: -600, to: 0 },
         duration: 1000,
         delay: 0,
         ease: 'Back.easeInOut',
         onComplete: () => {
           this.frontColumns.first?.removeAll(true);
-          const children = newFirstColumn.list.slice();
-          children.forEach((child) => {
+          const children = this.hideColumns.first?.list.slice();
+          children?.forEach((child) => {
             this.frontColumns.first!.add(child);
           });
-          newFirstColumn.destroy();
+          this.hideColumns.first?.removeAll(true);
+          this.hideColumns.first?.setY(-600);
           this.frontColumns.first?.setY(0);
         },
       },
       {
-        targets: newSecondColumn,
+        targets: this.hideColumns.second,
         y: { from: -600, to: 0 },
         duration: 1000,
         delay: 100,
         ease: 'Back.easeInOut',
         onComplete: () => {
           this.frontColumns.second?.removeAll(true);
-          const children = newSecondColumn.list.slice();
-          children.forEach((child) => {
+          const children = this.hideColumns.second?.list.slice();
+          children?.forEach((child) => {
             this.frontColumns.second!.add(child);
           });
-          newSecondColumn.destroy();
+          this.hideColumns.second?.removeAll(true);
+          this.hideColumns.second?.setY(-600);
           this.frontColumns.second?.setY(0);
         },
       },
       {
-        targets: newThirdColumn,
+        targets: this.hideColumns.third,
         y: { from: -600, to: 0 },
         duration: 1000,
         delay: 200,
         ease: 'Back.easeInOut',
         onComplete: () => {
           this.frontColumns.third?.removeAll(true);
-          const children = newThirdColumn.list.slice();
-          children.forEach((child) => {
+          const children = this.hideColumns.third?.list.slice();
+          children?.forEach((child) => {
             this.frontColumns.third!.add(child);
           });
-          newThirdColumn.destroy();
+          this.hideColumns.third?.removeAll(true);
+          this.hideColumns.third?.setY(-600);
           this.frontColumns.third?.setY(0);
         },
       },
       {
-        targets: newFourthColumn,
+        targets: this.hideColumns.fourth,
         y: { from: -600, to: 0 },
         duration: 1000,
         delay: 300,
@@ -219,18 +217,19 @@ export class Minos extends Scene {
         onComplete: () => {
           this.frontColumns.fourth?.removeAll(true);
 
-          const children = newFourthColumn.list.slice();
+          const children = this.hideColumns.fourth?.list.slice();
 
-          children.forEach((child) => {
+          children?.forEach((child) => {
             this.frontColumns.fourth!.add(child);
           });
 
-          newFourthColumn.destroy();
+          this.hideColumns.fourth?.removeAll(true);
+          this.hideColumns.fourth?.setY(-600);
           this.frontColumns.fourth?.setY(0);
         },
       },
       {
-        targets: newFifthColumn,
+        targets: this.hideColumns.fifth,
         y: { from: -600, to: 0 },
         duration: 1000,
         delay: 400,
@@ -238,13 +237,14 @@ export class Minos extends Scene {
         onComplete: () => {
           this.frontColumns.fifth?.removeAll(true);
 
-          const children = newFifthColumn.list.slice();
+          const children = this.hideColumns.fifth?.list.slice();
 
-          children.forEach((child) => {
+          children?.forEach((child) => {
             this.frontColumns.fifth!.add(child);
           });
 
-          newFifthColumn.destroy();
+          this.hideColumns.fifth?.removeAll(true);
+          this.hideColumns.fifth?.setY(-600);
           this.frontColumns.fifth?.setY(0);
         },
       },
@@ -274,15 +274,26 @@ export class Minos extends Scene {
 
   private createColumns() {
     this.frontColumns.first = this.add.container(0, 0);
-    this.frontColumns.first.name = `first column`;
+    this.frontColumns.first.name = `first front column`;
     this.frontColumns.second = this.add.container(0, 0);
-    this.frontColumns.second.name = `second column`;
+    this.frontColumns.second.name = `second front column`;
     this.frontColumns.third = this.add.container(0, 0);
-    this.frontColumns.third.name = `third column`;
+    this.frontColumns.third.name = `third front column`;
     this.frontColumns.fourth = this.add.container(0, 0);
-    this.frontColumns.fourth.name = `fourth column`;
+    this.frontColumns.fourth.name = `fourth front column`;
     this.frontColumns.fifth = this.add.container(0, 0);
-    this.frontColumns.fifth.name = `fifth column`;
+    this.frontColumns.fifth.name = `fifth front column`;
+
+    this.hideColumns.first = this.add.container(0, -600);
+    this.hideColumns.first.name = `first hide column`;
+    this.hideColumns.second = this.add.container(0, -600);
+    this.hideColumns.second.name = `second hide column`;
+    this.hideColumns.third = this.add.container(0, -600);
+    this.hideColumns.third.name = `third hide column`;
+    this.hideColumns.fourth = this.add.container(0, -600);
+    this.hideColumns.fourth.name = `fourth hide column`;
+    this.hideColumns.fifth = this.add.container(0, -600);
+    this.hideColumns.fifth.name = `fifth hide column`;
 
     this.symbolsContainer?.add([
       this.frontColumns.first,
@@ -290,6 +301,11 @@ export class Minos extends Scene {
       this.frontColumns.third,
       this.frontColumns.fourth,
       this.frontColumns.fifth,
+      this.hideColumns.first,
+      this.hideColumns.second,
+      this.hideColumns.third,
+      this.hideColumns.fourth,
+      this.hideColumns.fifth,
     ]);
   }
 }
