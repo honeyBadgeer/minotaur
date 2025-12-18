@@ -14,7 +14,8 @@ export type SymbolType =
   | 'squirrel'
   | 'tiger'
   | 'turtle'
-  | 'zebra';
+  | 'zebra'
+  | 'minotaur';
 
 export interface IMultiAtlasData {
   jsonUrl: string;
