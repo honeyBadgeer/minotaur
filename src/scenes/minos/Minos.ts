@@ -4,6 +4,9 @@ import { GameObjects, Scene } from 'phaser';
 
 type Columns = 'first' | 'second' | 'third' | 'fourth' | 'fifth';
 
+const offsetX = 280;
+const offsetY = 280;
+
 export class Minos extends Scene {
   private symbolsContainer: GameObjects.Container | null = null;
   private frontColumns: Record<Columns, GameObjects.Container | null> = {
@@ -35,23 +38,7 @@ export class Minos extends Scene {
 
     this.createColumns();
 
-    const offsetX = 280;
-    const offsetY = 280;
-
-    value.map((row, rowIdx) => {
-      row.map((symbol, colIdx) => {
-        const type = getSymbol(symbol);
-
-        const posX = rowIdx * offsetX;
-        const posY = colIdx * offsetY;
-
-        const newSymbol = new Symbol(this, type, posX, posY);
-
-        this.symbolsContainer?.add(newSymbol);
-
-        this.handleSetColumns(rowIdx, newSymbol);
-      });
-    });
+    this.handleCreateCombination(value, this.frontColumns);
   }
 
   handleAnimate(newCombination: number[][]) {
@@ -60,24 +47,6 @@ export class Minos extends Scene {
     this.handleAnimateOut();
 
     this.handleAnimateIn(newCombination);
-  }
-
-  private handleSetColumns(rowIdx: number, symbol: Symbol) {
-    if (rowIdx === 0) {
-      this.frontColumns.first?.add(symbol);
-    }
-    if (rowIdx === 1) {
-      this.frontColumns.second?.add(symbol);
-    }
-    if (rowIdx === 2) {
-      this.frontColumns.third?.add(symbol);
-    }
-    if (rowIdx === 3) {
-      this.frontColumns.fourth?.add(symbol);
-    }
-    if (rowIdx === 4) {
-      this.frontColumns.fifth?.add(symbol);
-    }
   }
 
   private handleAnimateOut() {
@@ -124,37 +93,7 @@ export class Minos extends Scene {
   }
 
   private handleAnimateIn(newCombination: number[][]) {
-    const offsetX = 280;
-    const offsetY = 280;
-
-    newCombination.map((row, rowIdx) => {
-      row.map((symbol, colIdx) => {
-        const type = getSymbol(symbol);
-
-        const posX = rowIdx * offsetX;
-        const posY = colIdx * offsetY;
-
-        const newSymbol = new Symbol(this, type, posX, posY);
-
-        this.symbolsContainer?.add(newSymbol);
-
-        if (rowIdx === 0) {
-          this.hideColumns.first?.add(newSymbol);
-        }
-        if (rowIdx === 1) {
-          this.hideColumns.second?.add(newSymbol);
-        }
-        if (rowIdx === 2) {
-          this.hideColumns.third?.add(newSymbol);
-        }
-        if (rowIdx === 3) {
-          this.hideColumns.fourth?.add(newSymbol);
-        }
-        if (rowIdx === 4) {
-          this.hideColumns.fifth?.add(newSymbol);
-        }
-      });
-    });
+    this.handleCreateCombination(newCombination, this.hideColumns);
 
     this.tweens.addMultiple([
       {
@@ -307,5 +246,47 @@ export class Minos extends Scene {
       this.hideColumns.fourth,
       this.hideColumns.fifth,
     ]);
+  }
+
+  private handleSetColumns(
+    rowIdx: number,
+    symbol: Symbol,
+    container: Record<Columns, GameObjects.Container | null>
+  ) {
+    if (rowIdx === 0) {
+      container.first?.add(symbol);
+    }
+    if (rowIdx === 1) {
+      container.second?.add(symbol);
+    }
+    if (rowIdx === 2) {
+      container.third?.add(symbol);
+    }
+    if (rowIdx === 3) {
+      container.fourth?.add(symbol);
+    }
+    if (rowIdx === 4) {
+      container.fifth?.add(symbol);
+    }
+  }
+
+  handleCreateCombination(
+    value: number[][],
+    container: Record<Columns, GameObjects.Container | null>
+  ) {
+    value.map((row, rowIdx) => {
+      row.map((symbol, colIdx) => {
+        const type = getSymbol(symbol);
+
+        const posX = rowIdx * offsetX;
+        const posY = colIdx * offsetY;
+
+        const newSymbol = new Symbol(this, type, posX, posY);
+
+        this.symbolsContainer?.add(newSymbol);
+
+        this.handleSetColumns(rowIdx, newSymbol, container);
+      });
+    });
   }
 }
