@@ -23,6 +23,8 @@ export class Minos extends Scene {
     fourth: null,
     fifth: null,
   };
+  private maskRect: GameObjects.Rectangle | null = null;
+  private mask: Phaser.Display.Masks.GeometryMask | null = null;
 
   constructor() {
     super('Minos');
@@ -30,6 +32,13 @@ export class Minos extends Scene {
 
   create() {
     this.createFrontFrame();
+
+    this.maskRect = this.add
+      .rectangle(162, 84, 1116, 638, 0x000000)
+      .setOrigin(0)
+      .setVisible(false);
+
+    this.mask = this.maskRect.createGeometryMask();
   }
 
   initCombination(value: number[][]) {
@@ -202,13 +211,8 @@ export class Minos extends Scene {
   }
 
   private handleSetMask() {
-    const maskRect = this.add
-      .rectangle(162, 84, 1116, 638, 0x000000)
-      .setOrigin(0)
-      .setVisible(false);
-
-    const mask = maskRect.createGeometryMask();
-    this.symbolsContainer?.setMask(mask);
+    if (!this.mask || !this.symbolsContainer) return;
+    this.symbolsContainer.setMask(this.mask);
   }
 
   private createColumns() {
