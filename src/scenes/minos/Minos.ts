@@ -7,6 +7,8 @@ type Columns = 'first' | 'second' | 'third' | 'fourth' | 'fifth';
 const offsetX = 280;
 const offsetY = 280;
 
+const keys = ['first', 'second', 'third', 'fourth', 'fifth'] as const;
+
 export class Minos extends Scene {
   private symbolsContainer: GameObjects.Container | null = null;
   private frontColumns: Record<Columns, GameObjects.Container | null> = {
@@ -59,144 +61,49 @@ export class Minos extends Scene {
   }
 
   private handleAnimateOut() {
-    this.tweens.addMultiple([
-      {
-        targets: this.frontColumns.first,
+    keys.forEach((key, i) => {
+      const frontCol = this.frontColumns[key];
+
+      this.tweens.add({
+        targets: frontCol,
         y: this.game.canvas.height + 500,
         duration: 1000,
-        delay: 0,
+        delay: i * 100,
         ease: 'Back.easeInOut',
-      },
-      {
-        targets: this.frontColumns.second,
-        y: this.game.canvas.height + 500,
-        duration: 1000,
-        delay: 100,
-        ease: 'Back.easeInOut',
-      },
-      {
-        targets: this.frontColumns.third,
-        y: this.game.canvas.height + 500,
-        duration: 1000,
-        delay: 200,
-        ease: 'Back.easeInOut',
-      },
-      {
-        targets: this.frontColumns.fourth,
-        y: this.game.canvas.height + 500,
-        duration: 1000,
-        delay: 300,
-        ease: 'Back.easeInOut',
-      },
-      {
-        targets: this.frontColumns.fifth,
-        y: this.game.canvas.height + 500,
-        duration: 1000,
-        delay: 400,
-        ease: 'Back.easeInOut',
-        onComplete: () => {
-          this.symbolsContainer?.clearMask();
+        onComplete: (tween: Phaser.Tweens.Tween) => {
+          tween.remove();
         },
-      },
-    ]);
+      });
+    });
   }
 
   private handleAnimateIn(newCombination: number[][]) {
     this.handleCreateCombination(newCombination, this.hideColumns);
 
-    this.tweens.addMultiple([
-      {
-        targets: this.hideColumns.first,
+    keys.forEach((key, i) => {
+      const hideCol = this.hideColumns[key];
+      const frontCol = this.frontColumns[key];
+
+      this.tweens.add({
+        targets: hideCol,
         y: { from: -600, to: 0 },
         duration: 1000,
-        delay: 0,
+        delay: i * 100,
         ease: 'Back.easeInOut',
-        onComplete: () => {
-          this.frontColumns.first?.removeAll(true);
-          const children = this.hideColumns.first?.list.slice();
+        onComplete: (tween: Phaser.Tweens.Tween) => {
+          frontCol?.removeAll(true);
+          const children = hideCol?.list.slice();
           children?.forEach((child) => {
-            this.frontColumns.first!.add(child);
+            frontCol!.add(child);
           });
-          this.hideColumns.first?.removeAll(true);
-          this.hideColumns.first?.setY(-600);
-          this.frontColumns.first?.setY(0);
+          hideCol?.removeAll(true);
+          hideCol?.setY(-600);
+          frontCol?.setY(0);
+
+          tween.remove();
         },
-      },
-      {
-        targets: this.hideColumns.second,
-        y: { from: -600, to: 0 },
-        duration: 1000,
-        delay: 100,
-        ease: 'Back.easeInOut',
-        onComplete: () => {
-          this.frontColumns.second?.removeAll(true);
-          const children = this.hideColumns.second?.list.slice();
-          children?.forEach((child) => {
-            this.frontColumns.second!.add(child);
-          });
-          this.hideColumns.second?.removeAll(true);
-          this.hideColumns.second?.setY(-600);
-          this.frontColumns.second?.setY(0);
-        },
-      },
-      {
-        targets: this.hideColumns.third,
-        y: { from: -600, to: 0 },
-        duration: 1000,
-        delay: 200,
-        ease: 'Back.easeInOut',
-        onComplete: () => {
-          this.frontColumns.third?.removeAll(true);
-          const children = this.hideColumns.third?.list.slice();
-          children?.forEach((child) => {
-            this.frontColumns.third!.add(child);
-          });
-          this.hideColumns.third?.removeAll(true);
-          this.hideColumns.third?.setY(-600);
-          this.frontColumns.third?.setY(0);
-        },
-      },
-      {
-        targets: this.hideColumns.fourth,
-        y: { from: -600, to: 0 },
-        duration: 1000,
-        delay: 300,
-        ease: 'Back.easeInOut',
-        onComplete: () => {
-          this.frontColumns.fourth?.removeAll(true);
-
-          const children = this.hideColumns.fourth?.list.slice();
-
-          children?.forEach((child) => {
-            this.frontColumns.fourth!.add(child);
-          });
-
-          this.hideColumns.fourth?.removeAll(true);
-          this.hideColumns.fourth?.setY(-600);
-          this.frontColumns.fourth?.setY(0);
-        },
-      },
-      {
-        targets: this.hideColumns.fifth,
-        y: { from: -600, to: 0 },
-        duration: 1000,
-        delay: 400,
-        ease: 'Back.easeInOut',
-        onComplete: () => {
-          this.frontColumns.fifth?.removeAll(true);
-
-          const children = this.hideColumns.fifth?.list.slice();
-
-          children?.forEach((child) => {
-            this.frontColumns.fifth!.add(child);
-          });
-
-          this.hideColumns.fifth?.removeAll(true);
-          this.hideColumns.fifth?.setY(-600);
-          this.frontColumns.fifth?.setY(0);
-        },
-      },
-    ]);
+      });
+    });
   }
 
   private createFrontFrame() {
