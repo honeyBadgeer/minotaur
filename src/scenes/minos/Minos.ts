@@ -7,8 +7,8 @@ import { getSymbol } from '@/services/helpers';
 import type { Columns } from '@/types/types';
 import { GameObjects, Scene } from 'phaser';
 
-const offsetX = 280;
-const offsetY = 280;
+const offsetX = 240;
+const offsetY = 240;
 const hideContainePositionY = -600;
 const containerFallingAnimDuration = 1000;
 
@@ -107,11 +107,11 @@ export class Minos extends Scene {
           frontCol?.setY(0);
 
           if (i === keys.length - 1) {
-            const isMinotaur = this.handleCheckIsMinotaur();
+            const bonusGameColumnIndex = this.handleCheckIsMinotaur();
 
-            isMinotaur
-              ? new MinotaurFull(this)
-              : eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE);
+            bonusGameColumnIndex === -1
+              ? eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE)
+              : this.handleStartRespin(bonusGameColumnIndex);
           }
 
           tween.remove();
@@ -120,20 +120,67 @@ export class Minos extends Scene {
     });
   }
 
-  private handleCheckIsMinotaur(): boolean {
-    if (!this.frontColumns) return false;
+  private handleStartRespin(bonusGameColumnIndex: number) {
+    if (!this.frontColumns) return;
 
-    return keys.some((key) => {
+    const test = keys[bonusGameColumnIndex];
+
+    const column = this.frontColumns[test];
+    const children = column?.list.slice() as Symbol[];
+
+    const symbol = children.find((item) => item.getType() === 'minotaur');
+    if (!symbol) return;
+
+    this.tweens.chain({
+      targets: symbol.spineInstance,
+      tweens: [
+        {
+          scale: 1.5,
+          ease: 'Linear',
+          duration: 800,
+        },
+        {
+          scale: 0.7,
+          ease: 'Linear',
+          duration: 800,
+        },
+      ],
+      onComplete: () => {
+        children
+          .filter((item) => item.getType() !== 'minotaur')
+          .forEach((item) => item.setVisible(false));
+
+        this.tweens.add({
+          targets: symbol,
+          y: children[1].y,
+          ease: 'Linear',
+          duration: 400,
+          onComplete: () => {
+            children.forEach((item) => item.setVisible(false));
+            const minotaur = new MinotaurFull(this);
+            minotaur.setX(symbol.x);
+          },
+        });
+      },
+    });
+  }
+
+  private handleCheckIsMinotaur(): number {
+    if (!this.frontColumns) return -1;
+
+    return keys.findIndex((key, i) => {
       const frontCol = this.frontColumns[key];
       if (!frontCol) return;
 
       const children = frontCol.list.slice();
 
-      return children.some((item) => {
+      const col = children.find((item) => {
         if (item instanceof Symbol) {
           return item.getType() === 'minotaur';
         }
       });
+
+      if (col) return i;
     });
   }
 
