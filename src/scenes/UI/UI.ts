@@ -3,7 +3,7 @@ import {
   DialogEvents,
   eventBus,
   GameEvents,
-  SoundManager,
+  GameStates,
   type TCharacterKey,
 } from '@/core';
 import type { IControlBarButtons } from '@/types/types';
@@ -29,7 +29,7 @@ const BUTTON_BACKGROUND_STATES = {
 
 export class UIScene extends Scene {
   exitButton: IconButton | null = null;
-  soundButton: GameObjects.Container | null = null;
+  soundButton: IconButton | null = null;
   rulesButton: IconButton | null = null;
   controlBar: ControlBar | null = null;
   statisticBar: StatisticBar | null = null;
@@ -285,7 +285,10 @@ export class UIScene extends Scene {
       0,
       0,
       {
-        onUp: () => eventBus.emit(PurchaseEvents.BUY_TICKET),
+        onUp: () => {
+          eventBus.emit(PurchaseEvents.BUY_TICKET);
+          eventBus.emit(CoreEvents.SetGameState, GameStates.PLAYING);
+        },
         onOver: () => this.events.emit(GameEvents.UPDATE_CURSOR, 'pointer'),
         onOut: () => this.events.emit(GameEvents.UPDATE_CURSOR, 'none'),
       },
@@ -325,12 +328,14 @@ export class UIScene extends Scene {
     this.controlBar?.activateButtons();
     this.exitButton?.setDisabled(false);
     this.rulesButton?.setDisabled(false);
+    this.soundButton?.setDisabled(false);
   }
 
   disableUI() {
     this.controlBar?.disableButtons();
     this.exitButton?.setDisabled(true);
     this.rulesButton?.setDisabled(true);
+    this.soundButton?.setDisabled(true);
   }
 
   activateControlBarSound() {

@@ -28,4 +28,8 @@ export class Symbol extends GameObjects.Container {
 
     this.spineInstance.animationState.setAnimation(0, 'moving', true);
   }
+
+  public getType() {
+    return this.symbolType;
+  }
 }

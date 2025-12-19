@@ -1,3 +1,6 @@
+import { eventBus } from '@/core/events/EventBus';
+import { CoreEvents } from '@/core/events/events';
+import { GameStates } from '@/core/Model/types';
 import { Symbol } from '@/entities/symbol';
 import { getSymbol } from '@/services/helpers';
 import type { Columns } from '@/types/types';
@@ -102,8 +105,33 @@ export class Minos extends Scene {
           hideCol?.setY(hideContainePositionY);
           frontCol?.setY(0);
 
+          if (i === keys.length - 1) {
+            const isMinotaur = this.handleCheckIsMinotaur();
+
+            isMinotaur
+              ? console.log('ANMATION')
+              : eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE);
+          }
+
           tween.remove();
         },
+      });
+    });
+  }
+
+  private handleCheckIsMinotaur(): boolean {
+    if (!this.frontColumns) return false;
+
+    return keys.some((key) => {
+      const frontCol = this.frontColumns[key];
+      if (!frontCol) return;
+
+      const children = frontCol.list.slice();
+
+      return children.some((item) => {
+        if (item instanceof Symbol) {
+          return item.getType() === 'minotaur';
+        }
       });
     });
   }
