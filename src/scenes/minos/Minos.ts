@@ -107,11 +107,11 @@ export class Minos extends Scene {
           frontCol?.setY(0);
 
           if (i === keys.length - 1) {
-            const bonusGameColumnIndex = this.handleCheckIsMinotaur();
+            const bonusGameColumnIndex = this.getIsBonuscolumn();
 
             bonusGameColumnIndex === -1
               ? eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE)
-              : this.handleStartRespin(bonusGameColumnIndex);
+              : this.handleCreateMinos(bonusGameColumnIndex);
           }
 
           tween.remove();
@@ -120,7 +120,7 @@ export class Minos extends Scene {
     });
   }
 
-  private handleStartRespin(bonusGameColumnIndex: number) {
+  private handleCreateMinos(bonusGameColumnIndex: number) {
     if (!this.frontColumns) return;
 
     const test = keys[bonusGameColumnIndex];
@@ -156,16 +156,19 @@ export class Minos extends Scene {
           ease: 'Linear',
           duration: 400,
           onComplete: () => {
-            children.forEach((item) => item.setVisible(false));
-            const minotaur = new MinotaurFull(this);
-            minotaur.setX(symbol.x);
+            const positionX = symbol.x;
+            column?.removeAll(true);
+            const minos = new MinotaurFull(this);
+            column?.add(minos);
+            minos.setPosition(positionX - 200, -150);
+            eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE);
           },
         });
       },
     });
   }
 
-  private handleCheckIsMinotaur(): number {
+  private getIsBonuscolumn(): number {
     if (!this.frontColumns) return -1;
 
     return keys.findIndex((key, i) => {
