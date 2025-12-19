@@ -5,6 +5,8 @@ export interface IAtlasData {
   imageUrl: string;
 }
 
+export type Columns = 'first' | 'second' | 'third' | 'fourth' | 'fifth';
+
 export type SymbolType =
   | 'monster'
   | 'mouse'

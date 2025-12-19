@@ -1,11 +1,12 @@
 import { Symbol } from '@/entities/symbol';
 import { getSymbol } from '@/services/helpers';
+import type { Columns } from '@/types/types';
 import { GameObjects, Scene } from 'phaser';
-
-type Columns = 'first' | 'second' | 'third' | 'fourth' | 'fifth';
 
 const offsetX = 280;
 const offsetY = 280;
+const hideContainePositionY = -600;
+const containerFallingAnimDuration = 1000;
 
 const keys = ['first', 'second', 'third', 'fourth', 'fifth'] as const;
 
@@ -67,10 +68,11 @@ export class Minos extends Scene {
       this.tweens.add({
         targets: frontCol,
         y: this.game.canvas.height + 500,
-        duration: 1000,
+        duration: containerFallingAnimDuration,
         delay: i * 100,
         ease: 'Back.easeInOut',
         onComplete: (tween: Phaser.Tweens.Tween) => {
+          this.symbolsContainer?.clearMask();
           tween.remove();
         },
       });
@@ -86,8 +88,8 @@ export class Minos extends Scene {
 
       this.tweens.add({
         targets: hideCol,
-        y: { from: -600, to: 0 },
-        duration: 1000,
+        y: { from: hideContainePositionY, to: 0 },
+        duration: containerFallingAnimDuration,
         delay: i * 100,
         ease: 'Back.easeInOut',
         onComplete: (tween: Phaser.Tweens.Tween) => {
@@ -97,7 +99,7 @@ export class Minos extends Scene {
             frontCol!.add(child);
           });
           hideCol?.removeAll(true);
-          hideCol?.setY(-600);
+          hideCol?.setY(hideContainePositionY);
           frontCol?.setY(0);
 
           tween.remove();
@@ -134,15 +136,15 @@ export class Minos extends Scene {
     this.frontColumns.fifth = this.add.container(0, 0);
     this.frontColumns.fifth.name = `fifth front column`;
 
-    this.hideColumns.first = this.add.container(0, -600);
+    this.hideColumns.first = this.add.container(0, hideContainePositionY);
     this.hideColumns.first.name = `first hide column`;
-    this.hideColumns.second = this.add.container(0, -600);
+    this.hideColumns.second = this.add.container(0, hideContainePositionY);
     this.hideColumns.second.name = `second hide column`;
-    this.hideColumns.third = this.add.container(0, -600);
+    this.hideColumns.third = this.add.container(0, hideContainePositionY);
     this.hideColumns.third.name = `third hide column`;
-    this.hideColumns.fourth = this.add.container(0, -600);
+    this.hideColumns.fourth = this.add.container(0, hideContainePositionY);
     this.hideColumns.fourth.name = `fourth hide column`;
-    this.hideColumns.fifth = this.add.container(0, -600);
+    this.hideColumns.fifth = this.add.container(0, hideContainePositionY);
     this.hideColumns.fifth.name = `fifth hide column`;
 
     this.symbolsContainer?.add([
@@ -181,7 +183,7 @@ export class Minos extends Scene {
     }
   }
 
-  handleCreateCombination(
+  private handleCreateCombination(
     value: number[][],
     container: Record<Columns, GameObjects.Container | null>
   ) {
