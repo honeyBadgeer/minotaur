@@ -136,6 +136,10 @@ const preloadSpines: Record<string, { json: string; atlas: string }> = {
     json: 'assets/spines/minotaur/skeleton.json',
     atlas: 'assets/spines/minotaur/skeleton.atlas',
   },
+  minotaurFull: {
+    json: 'assets/spines/minotaur-full/skeleton.json',
+    atlas: 'assets/spines/minotaur-full/skeleton.atlas',
+  },
 };
 
 const SYMBOLS_CONFIG: TSymbolsConfig[] = [

@@ -3,12 +3,10 @@ import { anims, EnemyEntity, Player } from '@/entities';
 import { BulletFactory } from '@/entities/Bullet';
 import { BulletEntity } from '@/entities/Bullet/BulletEntity';
 import type { BeastMode, EnemyId, EnemyType, IBundle } from '@/types/types';
-import { BundleAnmation } from '@/ui/components/BundleAnimation';
 import { GameObjects, Physics, Scene } from 'phaser';
 import { eventBus } from '@/core/events';
 import { SoundManager, type SoundKey } from '@/core/managers';
 import { GameStates, type TBulletType } from '@/core/Model/types';
-import { BulletImpact } from '@/entities/BulletImpact';
 import { Debug } from '@/ui/components/Debug';
 
 const maxCreatedBullets = 50;
@@ -323,14 +321,6 @@ export class Shooting extends Scene {
     if (!this.bulletsImpactGroup) return;
 
     this.bulletsImpactGroup.clear(false, true);
-
-    for (let i = 0; i < 34; i++) {
-      const bulletImpact = new BulletImpact(this, {
-        type: value,
-      });
-      bulletImpact.setActive(false).setVisible(false);
-      this.bulletsImpactGroup.add(bulletImpact);
-    }
   }
 
   public clearBullets() {
@@ -376,8 +366,6 @@ export class Shooting extends Scene {
         ) as BulletEntity[];
         bullets.forEach((b) => {
           b.hit();
-          const impact =
-            this.bulletsImpactGroup?.getFirstDead() as BulletImpact;
 
           const bulletX = b.x;
           const bulletY = b.y;
@@ -389,8 +377,6 @@ export class Shooting extends Scene {
 
           const impactX = bulletX + (enemyX - bulletX) * t;
           const impactY = bulletY + (enemyY - bulletY) * t;
-
-          if (impact) impact.handleStartAnimation(impactX, impactY);
         });
         enemyHitCallback(enemy.beastMode, enemy.enemyId);
       }

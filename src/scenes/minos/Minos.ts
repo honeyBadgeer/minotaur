@@ -1,6 +1,7 @@
 import { eventBus } from '@/core/events/EventBus';
 import { CoreEvents } from '@/core/events/events';
 import { GameStates } from '@/core/Model/types';
+import { MinotaurFull } from '@/entities/MinotaurFull';
 import { Symbol } from '@/entities/symbol';
 import { getSymbol } from '@/services/helpers';
 import type { Columns } from '@/types/types';
@@ -109,7 +110,7 @@ export class Minos extends Scene {
             const isMinotaur = this.handleCheckIsMinotaur();
 
             isMinotaur
-              ? console.log('ANMATION')
+              ? new MinotaurFull(this)
               : eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE);
           }
 
