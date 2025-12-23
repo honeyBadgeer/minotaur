@@ -10,7 +10,7 @@ import { GameObjects, Scene } from 'phaser';
 const offsetX = 225;
 const offsetY = 225;
 const hideContainePositionY = -800;
-const containerFallingAnimDuration = 1000;
+const containerFallingAnimDuration = 500;
 const containerWidth = 1116;
 const containerHeight = 638;
 const containerPosX = 160;
@@ -145,14 +145,14 @@ export class Minos extends Scene {
       targets: symbol.spineInstance,
       tweens: [
         {
-          scale: 1.5,
+          scale: 1,
           ease: 'Linear',
-          duration: 800,
+          duration: 400,
         },
         {
           scale: 0.7,
           ease: 'Linear',
-          duration: 800,
+          duration: 400,
         },
       ],
       onComplete: () => {
@@ -170,8 +170,7 @@ export class Minos extends Scene {
             column?.removeAll(true);
             const minos = new MinotaurFull(this);
             column?.add(minos);
-            minos.setPosition(positionX, symbol.y);
-            eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE);
+            minos.setPosition(positionX, 0 + 320);
 
             const newKeys = keys.filter((key, i) => i !== bonusGameColumnIndex);
 
@@ -210,19 +209,16 @@ export class Minos extends Scene {
 
       const frontColChildren = frontCol?.list.slice() as Symbol[];
 
-      const rock = this.add
-        .image(0, -1000, 'rock')
-        .setOrigin(0.5)
-        .setScale(0.8);
+      const rock = this.add.image(0, -700, 'rock').setOrigin(0.5).setScale(0.8);
       rock.setX(frontColChildren[0].x);
       hideCol?.add(rock);
 
       this.tweens.add({
         targets: rock,
         y: 0 + rock.displayHeight / 2,
-        duration: containerFallingAnimDuration,
-        delay: i * 100,
-        ease: 'Linear',
+        duration: 1500,
+        delay: i * 200,
+        ease: 'Quad.easeIn',
         onComplete: () => {
           frontCol?.removeAll(true);
           const hideColChildren = hideCol?.list.slice();
@@ -232,21 +228,27 @@ export class Minos extends Scene {
           });
           hideCol?.removeAll(true);
           hideCol?.setY(hideContainePositionY);
+
+          if (i === newKeys.length - 1) {
+            eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE);
+          }
         },
       });
     });
   }
 
   private createFrontFrame() {
-    this.add
+    const frame = this.add
       .image(
         this.game.canvas.width * 0.5,
         this.game.canvas.height * 0.5,
         'frame'
       )
       .setOrigin(0.5)
-      .setScale(0.8);
-    this.add
+      .setScale(0.79, 0.8);
+    frame.name = 'frame image';
+
+    const frontFrame = this.add
       .image(
         this.game.canvas.width * 0.5,
         this.game.canvas.height * 0.5,
@@ -254,6 +256,7 @@ export class Minos extends Scene {
       )
       .setOrigin(0.5)
       .setScale(0.8);
+    frontFrame.name = 'front frame';
   }
 
   private handleSetMask() {

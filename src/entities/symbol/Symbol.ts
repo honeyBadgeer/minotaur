@@ -23,12 +23,13 @@ export class Symbol extends GameObjects.Container {
     this.scene.add.existing(this);
 
     this.add(this.spineInstance as SpineGameObject);
-    this.scene.physics.add.existing(this);
 
     this.spineInstance.animationState.setAnimation(0, 'moving', true);
 
     this.spineInstance.setDisplaySize(223, 213);
     this.spineInstance.setOrigin(0.5);
+
+    if (this.symbolType === 'minotaur') this.spineInstance.setScale(0.7);
 
     this.setPosition(
       x + this.spineInstance.displayWidth / 2,
