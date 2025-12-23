@@ -1,5 +1,6 @@
 import type { SoundConfig, TCharacterKey } from '@/core';
 import type {
+  Columns,
   IAtlasData,
   IMultiAtlasData,
   TEnemyOptions,
@@ -186,6 +187,8 @@ const SYMBOLS_CONFIG: TSymbolsConfig[] = [
     value: 10,
   },
 ];
+
+const COLUMNS_KEYS: Columns[] = ['first', 'second', 'third', 'fourth', 'fifth'];
 
 const WIDTH = 1440;
 const HEIGHT = 810;
@@ -512,4 +515,5 @@ export {
   MAX_DEMO_VALUE,
   MAX_DEMO_BUNDLE_VALUE,
   SYMBOLS_CONFIG,
+  COLUMNS_KEYS,
 };

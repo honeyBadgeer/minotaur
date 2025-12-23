@@ -3,6 +3,7 @@ import { CoreEvents } from '@/core/events/events';
 import { GameStates } from '@/core/Model/types';
 import { MinotaurFull } from '@/entities/MinotaurFull';
 import { Symbol } from '@/entities/symbol';
+import { COLUMNS_KEYS } from '@/services/constants';
 import { getSymbol } from '@/services/helpers';
 import type { Columns } from '@/types/types';
 import { GameObjects, Scene } from 'phaser';
@@ -15,8 +16,6 @@ const containerWidth = 1116;
 const containerHeight = 638;
 const containerPosX = 160;
 const containerPosY = 84;
-
-const keys = ['first', 'second', 'third', 'fourth', 'fifth'] as const;
 
 export class Minos extends Scene {
   private symbolsContainer: GameObjects.Container | null = null;
@@ -76,7 +75,7 @@ export class Minos extends Scene {
   }
 
   private handleAnimateOut() {
-    keys.forEach((key, i) => {
+    COLUMNS_KEYS.forEach((key, i) => {
       const frontCol = this.frontColumns[key];
 
       this.tweens.add({
@@ -96,7 +95,7 @@ export class Minos extends Scene {
   private handleAnimateIn(newCombination: number[][]) {
     this.handleCreateCombination(newCombination, this.hideColumns);
 
-    keys.forEach((key, i) => {
+    COLUMNS_KEYS.forEach((key, i) => {
       const hideCol = this.hideColumns[key];
       const frontCol = this.frontColumns[key];
 
@@ -116,7 +115,7 @@ export class Minos extends Scene {
           hideCol?.setY(hideContainePositionY);
           frontCol?.setY(0);
 
-          if (i === keys.length - 1) {
+          if (i === COLUMNS_KEYS.length - 1) {
             const bonusGameColumnIndex = this.getIsBonuscolumn();
 
             bonusGameColumnIndex === -1
@@ -133,9 +132,9 @@ export class Minos extends Scene {
   private handleCreateMinos(bonusGameColumnIndex: number) {
     if (!this.frontColumns) return;
 
-    const test = keys[bonusGameColumnIndex];
+    const minosColumn = COLUMNS_KEYS[bonusGameColumnIndex];
 
-    const column = this.frontColumns[test];
+    const column = this.frontColumns[minosColumn];
     const children = column?.list.slice() as Symbol[];
 
     const symbol = children.find((item) => item.getType() === 'minotaur');
@@ -170,9 +169,11 @@ export class Minos extends Scene {
             column?.removeAll(true);
             const minos = new MinotaurFull(this);
             column?.add(minos);
-            minos.setPosition(positionX, 0 + 320);
+            minos.setPosition(positionX, 0 + 320).setDepth(10000);
 
-            const newKeys = keys.filter((key, i) => i !== bonusGameColumnIndex);
+            const newKeys = COLUMNS_KEYS.filter(
+              (key, i) => i !== bonusGameColumnIndex
+            );
 
             this.handleAddRocks(newKeys);
           },
@@ -184,7 +185,7 @@ export class Minos extends Scene {
   private getIsBonuscolumn(): number {
     if (!this.frontColumns) return -1;
 
-    return keys.findIndex((key, i) => {
+    return COLUMNS_KEYS.findIndex((key, i) => {
       const frontCol = this.frontColumns[key];
       if (!frontCol) return;
 
@@ -200,9 +201,7 @@ export class Minos extends Scene {
     });
   }
 
-  private handleAddRocks(
-    newKeys: ('first' | 'second' | 'third' | 'fourth' | 'fifth')[]
-  ) {
+  private handleAddRocks(newKeys: Columns[]) {
     newKeys.forEach((key, i) => {
       const hideCol = this.hideColumns[key];
       const frontCol = this.frontColumns[key];
