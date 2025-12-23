@@ -162,6 +162,10 @@ export class Minos extends Scene {
             column?.add(minos);
             minos.setPosition(positionX - 200, -150);
             eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE);
+
+            const newKeys = keys.filter((key, i) => i !== bonusGameColumnIndex);
+
+            this.handleAddRocks(newKeys);
           },
         });
       },
@@ -187,7 +191,52 @@ export class Minos extends Scene {
     });
   }
 
+  private handleAddRocks(
+    newKeys: ('first' | 'second' | 'third' | 'fourth' | 'fifth')[]
+  ) {
+    newKeys.forEach((key, i) => {
+      const hideCol = this.hideColumns[key];
+      const frontCol = this.frontColumns[key];
+
+      const frontColChildren = frontCol?.list.slice() as Symbol[];
+
+      const rock = this.add
+        .image(frontColChildren[0].x, -1000, 'rock')
+        .setOrigin(0)
+        .setScale(0.8);
+
+      hideCol?.add(rock);
+      console.log('animation?');
+
+      this.tweens.add({
+        targets: rock,
+        y: 0,
+        duration: containerFallingAnimDuration,
+        delay: i * 100,
+        ease: 'Linear',
+        onComplete: () => {
+          frontCol?.removeAll(true);
+          const hideColChildren = hideCol?.list.slice();
+
+          hideColChildren?.forEach((child) => {
+            frontCol!.add(child);
+          });
+          hideCol?.removeAll(true);
+          hideCol?.setY(hideContainePositionY);
+        },
+      });
+    });
+  }
+
   private createFrontFrame() {
+    this.add
+      .image(
+        this.game.canvas.width * 0.5,
+        this.game.canvas.height * 0.5,
+        'frame'
+      )
+      .setOrigin(0.5)
+      .setScale(0.8);
     this.add
       .image(
         this.game.canvas.width * 0.5,

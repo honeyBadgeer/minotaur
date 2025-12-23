@@ -74,6 +74,8 @@ const preloadSpritesMap: Record<string, string> = {
   bookmark: 'assets/sprites/onboarding/bookmark.svg',
   arm: 'assets/sprites/onboarding/arm.png',
   frontFrame: 'assets/sprites/front_frame.png',
+  frame: 'assets/sprites/frame.png',
+  rock: 'assets/sprites/rock.png',
 };
 
 const preloadSvg: Record<string, string> = {
