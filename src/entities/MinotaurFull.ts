@@ -16,8 +16,8 @@ export class MinotaurFull extends Phaser.GameObjects.Container {
 
     this.add(this.spineInstance as SpineGameObject);
 
-    this.spineInstance.setOrigin(0);
-    this.spineInstance.setScale(0.7, 0.8);
+    this.spineInstance.setOrigin(0.5);
+    this.spineInstance.setScale(0.7, 0.8).setDepth(100);
     this.spineInstance?.animationState.setAnimation(0, '1_idle', true);
   }
 

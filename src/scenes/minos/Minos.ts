@@ -7,10 +7,14 @@ import { getSymbol } from '@/services/helpers';
 import type { Columns } from '@/types/types';
 import { GameObjects, Scene } from 'phaser';
 
-const offsetX = 240;
-const offsetY = 240;
-const hideContainePositionY = -600;
+const offsetX = 225;
+const offsetY = 225;
+const hideContainePositionY = -800;
 const containerFallingAnimDuration = 1000;
+const containerWidth = 1116;
+const containerHeight = 638;
+const containerPosX = 160;
+const containerPosY = 84;
 
 const keys = ['first', 'second', 'third', 'fourth', 'fifth'] as const;
 
@@ -41,7 +45,13 @@ export class Minos extends Scene {
     this.createFrontFrame();
 
     this.maskRect = this.add
-      .rectangle(162, 84, 1116, 638, 0x000000)
+      .rectangle(
+        containerPosX,
+        containerPosY,
+        containerWidth,
+        containerHeight,
+        0x000000
+      )
       .setOrigin(0)
       .setVisible(false);
 
@@ -49,7 +59,7 @@ export class Minos extends Scene {
   }
 
   initCombination(value: number[][]) {
-    this.symbolsContainer = this.add.container(250, 160);
+    this.symbolsContainer = this.add.container(containerPosX, containerPosY);
     this.symbolsContainer.name = 'Symbols';
 
     this.createColumns();
@@ -160,7 +170,7 @@ export class Minos extends Scene {
             column?.removeAll(true);
             const minos = new MinotaurFull(this);
             column?.add(minos);
-            minos.setPosition(positionX - 200, -150);
+            minos.setPosition(positionX, symbol.y);
             eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE);
 
             const newKeys = keys.filter((key, i) => i !== bonusGameColumnIndex);
@@ -201,16 +211,15 @@ export class Minos extends Scene {
       const frontColChildren = frontCol?.list.slice() as Symbol[];
 
       const rock = this.add
-        .image(frontColChildren[0].x, -1000, 'rock')
-        .setOrigin(0)
+        .image(0, -1000, 'rock')
+        .setOrigin(0.5)
         .setScale(0.8);
-
+      rock.setX(frontColChildren[0].x);
       hideCol?.add(rock);
-      console.log('animation?');
 
       this.tweens.add({
         targets: rock,
-        y: 0,
+        y: 0 + rock.displayHeight / 2,
         duration: containerFallingAnimDuration,
         delay: i * 100,
         ease: 'Linear',
