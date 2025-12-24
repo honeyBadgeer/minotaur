@@ -80,8 +80,9 @@ export class Minos extends Scene {
           targets: frontCol,
           y: this.game.canvas.height + 500,
           duration: containerFallingAnimDuration,
-          delay: i * 200,
+          delay: i * 100,
           ease: 'Back.easeInOut',
+          easeParams: [1.2],
           onComplete: () => {
             this.symbolsContainer?.clearMask();
           },
@@ -90,8 +91,9 @@ export class Minos extends Scene {
           targets: hideCol,
           y: { from: hideContainePositionY, to: 0 },
           duration: containerFallingAnimDuration,
-          delay: i * 200,
+          delay: i * 100,
           ease: 'Back.easeInOut',
+          easeParams: [1.2],
           onComplete: () => {
             frontCol?.removeAll(true);
             const children = hideCol?.list.slice();
@@ -124,11 +126,11 @@ export class Minos extends Scene {
     const children = column?.list.slice() as Symbol[];
     if (!children) return;
 
-    const symbol = children.find((item) => item.getType() === 'minotaur');
-    if (!symbol) return;
+    const minosSymbol = children.find((item) => item.getType() === 'minotaur');
+    if (!minosSymbol) return;
 
     this.tweens.chain({
-      targets: symbol.spineInstance,
+      targets: minosSymbol.spineInstance,
       tweens: [
         {
           scale: 1,
@@ -143,12 +145,12 @@ export class Minos extends Scene {
       ],
       onComplete: () => {
         this.tweens.add({
-          targets: symbol,
+          targets: minosSymbol,
           y: children[1].y,
           ease: 'Linear',
           duration: 400,
           onComplete: (twin: Phaser.Tweens.Tween) => {
-            const positionX = symbol.x;
+            const positionX = minosSymbol.x;
             column?.removeAll(true);
             const minos = new MinotaurFull(this);
             column?.add(minos);
