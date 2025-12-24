@@ -66,7 +66,7 @@ export class Minos extends Scene {
     this.handleCreateCombination(value, this.frontColumns);
   }
 
-  handleAnimate(newCombination: number[][]) {
+  handleAnimate(newCombination: number[][], bonusGameColumnIndex: number) {
     this.handleSetMask();
 
     this.handleCreateCombination(newCombination, this.hideColumns);
@@ -105,8 +105,6 @@ export class Minos extends Scene {
             frontCol?.setY(0);
 
             if (i === COLUMNS_KEYS.length - 1) {
-              const bonusGameColumnIndex = this.getIsBonuscolumn();
-
               bonusGameColumnIndex === -1
                 ? eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE)
                 : this.handleCreateMinos(bonusGameColumnIndex);
@@ -124,6 +122,9 @@ export class Minos extends Scene {
 
     const column = this.frontColumns[minosColumn];
     const children = column?.list.slice() as Symbol[];
+
+    console.log(children);
+
     if (!children) return;
 
     const minosSymbol = children.find((item) => item.getType() === 'minotaur');
@@ -165,25 +166,6 @@ export class Minos extends Scene {
           },
         });
       },
-    });
-  }
-
-  private getIsBonuscolumn(): number {
-    if (!this.frontColumns) return -1;
-
-    return COLUMNS_KEYS.findIndex((key, i) => {
-      const frontCol = this.frontColumns[key];
-      if (!frontCol) return;
-
-      const children = frontCol.list.slice();
-
-      const col = children.find((item) => {
-        if (item instanceof Symbol) {
-          return item.getType() === 'minotaur';
-        }
-      });
-
-      if (col) return i;
     });
   }
 

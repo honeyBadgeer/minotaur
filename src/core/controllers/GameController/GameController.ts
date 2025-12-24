@@ -6,7 +6,11 @@ import {
   WSStates,
   type WSData,
 } from '@/network/WebSocketService';
-import { getBetsByCharacter, getSearchParams } from '@/services/helpers';
+import {
+  getBetsByCharacter,
+  getIsBonusColumn,
+  getSearchParams,
+} from '@/services/helpers';
 import { mdeToNormal } from '@/services/lib/mdeToNormal';
 import type { Character } from '@/ui/components/CharacterCarousel/types';
 import { Game } from 'phaser';
@@ -14,7 +18,6 @@ import { Game } from 'phaser';
 import {
   BetEvents,
   CoreEvents,
-  DialogEvents,
   eventBus,
   GameEvents,
   SceneEvents,
@@ -165,7 +168,10 @@ class GameController {
 
   private animateSymbol(value: number[][] | undefined) {
     if (!value) return;
-    this.view.minosScene.handleAnimate(value);
+
+    const bonusGameColumnIndex = getIsBonusColumn(value);
+
+    this.view.minosScene.handleAnimate(value, bonusGameColumnIndex);
   }
 
   private handleOnError(error: TError) {
