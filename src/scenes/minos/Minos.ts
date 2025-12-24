@@ -69,63 +69,49 @@ export class Minos extends Scene {
   handleAnimate(newCombination: number[][]) {
     this.handleSetMask();
 
-    this.handleAnimateOut();
-
-    this.handleAnimateIn(newCombination);
-  }
-
-  private handleAnimateOut() {
-    COLUMNS_KEYS.forEach((key, i) => {
-      const frontCol = this.frontColumns[key];
-
-      this.tweens.add({
-        targets: frontCol,
-        y: this.game.canvas.height + 500,
-        duration: containerFallingAnimDuration,
-        delay: i * 100,
-        ease: 'Back.easeInOut',
-        onComplete: (tween: Phaser.Tweens.Tween) => {
-          this.symbolsContainer?.clearMask();
-          tween.remove();
-        },
-      });
-    });
-  }
-
-  private handleAnimateIn(newCombination: number[][]) {
     this.handleCreateCombination(newCombination, this.hideColumns);
 
     COLUMNS_KEYS.forEach((key, i) => {
       const hideCol = this.hideColumns[key];
       const frontCol = this.frontColumns[key];
 
-      this.tweens.add({
-        targets: hideCol,
-        y: { from: hideContainePositionY, to: 0 },
-        duration: containerFallingAnimDuration,
-        delay: i * 100,
-        ease: 'Back.easeInOut',
-        onComplete: (tween: Phaser.Tweens.Tween) => {
-          frontCol?.removeAll(true);
-          const children = hideCol?.list.slice();
-          children?.forEach((child) => {
-            frontCol!.add(child);
-          });
-          hideCol?.removeAll(true);
-          hideCol?.setY(hideContainePositionY);
-          frontCol?.setY(0);
-
-          if (i === COLUMNS_KEYS.length - 1) {
-            const bonusGameColumnIndex = this.getIsBonuscolumn();
-
-            bonusGameColumnIndex === -1
-              ? eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE)
-              : this.handleCreateMinos(bonusGameColumnIndex);
-          }
-
-          tween.remove();
+      this.tweens.addMultiple([
+        {
+          targets: frontCol,
+          y: this.game.canvas.height + 500,
+          duration: containerFallingAnimDuration,
+          delay: i * 200,
+          ease: 'Back.easeInOut',
+          onComplete: () => {
+            this.symbolsContainer?.clearMask();
+          },
         },
-      });
+        {
+          targets: hideCol,
+          y: { from: hideContainePositionY, to: 0 },
+          duration: containerFallingAnimDuration,
+          delay: i * 200,
+          ease: 'Back.easeInOut',
+          onComplete: () => {
+            frontCol?.removeAll(true);
+            const children = hideCol?.list.slice();
+            children?.forEach((child) => {
+              frontCol!.add(child);
+            });
+            hideCol?.removeAll(true);
+            hideCol?.setY(hideContainePositionY);
+            frontCol?.setY(0);
+
+            if (i === COLUMNS_KEYS.length - 1) {
+              const bonusGameColumnIndex = this.getIsBonuscolumn();
+
+              bonusGameColumnIndex === -1
+                ? eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE)
+                : this.handleCreateMinos(bonusGameColumnIndex);
+            }
+          },
+        },
+      ]);
     });
   }
 
