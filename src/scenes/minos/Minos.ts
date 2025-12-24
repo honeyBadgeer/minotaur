@@ -136,6 +136,7 @@ export class Minos extends Scene {
 
     const column = this.frontColumns[minosColumn];
     const children = column?.list.slice() as Symbol[];
+    if (!children) return;
 
     const symbol = children.find((item) => item.getType() === 'minotaur');
     if (!symbol) return;
@@ -155,27 +156,24 @@ export class Minos extends Scene {
         },
       ],
       onComplete: () => {
-        children
-          .filter((item) => item.getType() !== 'minotaur')
-          .forEach((item) => item.setVisible(false));
-
         this.tweens.add({
           targets: symbol,
           y: children[1].y,
           ease: 'Linear',
           duration: 400,
-          onComplete: () => {
+          onComplete: (twin: Phaser.Tweens.Tween) => {
             const positionX = symbol.x;
             column?.removeAll(true);
             const minos = new MinotaurFull(this);
             column?.add(minos);
-            minos.setPosition(positionX, 0 + 320).setDepth(10000);
+            minos.setPosition(positionX - 70, 0 + 320);
 
             const newKeys = COLUMNS_KEYS.filter(
               (key, i) => i !== bonusGameColumnIndex
             );
 
             this.handleAddRocks(newKeys);
+            twin.remove();
           },
         });
       },
@@ -203,33 +201,25 @@ export class Minos extends Scene {
 
   private handleAddRocks(newKeys: Columns[]) {
     newKeys.forEach((key, i) => {
-      const hideCol = this.hideColumns[key];
       const frontCol = this.frontColumns[key];
 
       const frontColChildren = frontCol?.list.slice() as Symbol[];
 
       const rock = this.add.image(0, -700, 'rock').setOrigin(0.5).setScale(0.8);
       rock.setX(frontColChildren[0].x);
-      hideCol?.add(rock);
+
+      frontCol!.add(rock);
 
       this.tweens.add({
         targets: rock,
         y: 0 + rock.displayHeight / 2,
-        duration: 1500,
-        delay: i * 200,
-        ease: 'Quad.easeIn',
-        onComplete: () => {
-          frontCol?.removeAll(true);
-          const hideColChildren = hideCol?.list.slice();
-
-          hideColChildren?.forEach((child) => {
-            frontCol!.add(child);
-          });
-          hideCol?.removeAll(true);
-          hideCol?.setY(hideContainePositionY);
-
+        duration: 500,
+        delay: i * 100,
+        ease: 'Sine.easeInOut',
+        onComplete: (twin: Phaser.Tweens.Tween) => {
           if (i === newKeys.length - 1) {
             eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE);
+            twin.remove();
           }
         },
       });
