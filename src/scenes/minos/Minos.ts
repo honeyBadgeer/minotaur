@@ -16,6 +16,7 @@ const containerWidth = 1116;
 const containerHeight = 638;
 const containerPosX = 160;
 const containerPosY = 84;
+const waitingTimeToAddColumns = 100;
 
 export class Minos extends Scene {
   private symbolsContainer: GameObjects.Container | null = null;
@@ -66,7 +67,7 @@ export class Minos extends Scene {
     this.handleCreateCombination(value, this.frontColumns);
   }
 
-  handleAnimate(newCombination: number[][], bonusGameColumnIndex: number) {
+  handleAnimate(newCombination: number[][], bonusGamePosition: number[]) {
     this.handleSetMask();
 
     this.handleCreateCombination(newCombination, this.hideColumns);
@@ -104,30 +105,32 @@ export class Minos extends Scene {
             hideCol?.setY(hideContainePositionY);
             frontCol?.setY(0);
 
-            if (i === COLUMNS_KEYS.length - 1) {
-              bonusGameColumnIndex === -1
-                ? eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE)
-                : this.handleCreateMinos(bonusGameColumnIndex);
-            }
+            if (i === COLUMNS_KEYS.length - 1)
+              this.handleCheckIsBonus(bonusGamePosition);
           },
         },
       ]);
     });
   }
 
-  private handleCreateMinos(bonusGameColumnIndex: number) {
+  private handleCheckIsBonus(bonusGamePosition: number[]) {
+    bonusGamePosition.length === 0
+      ? eventBus.emit(CoreEvents.SetGameState, GameStates.IDLE)
+      : this.time.delayedCall(waitingTimeToAddColumns, () => {
+          this.handleCreateMinos(bonusGamePosition);
+        });
+  }
+
+  private handleCreateMinos(bonusGamePosition: number[]) {
     if (!this.frontColumns) return;
 
-    const minosColumn = COLUMNS_KEYS[bonusGameColumnIndex];
+    const minosColumn = COLUMNS_KEYS[bonusGamePosition[0]];
 
     const column = this.frontColumns[minosColumn];
-    const children = column?.list.slice() as Symbol[];
+    if (!column) return;
 
-    console.log(children);
-
-    if (!children) return;
-
-    const minosSymbol = children.find((item) => item.getType() === 'minotaur');
+    const children = column.list.slice() as Symbol[];
+    const minosSymbol = children[bonusGamePosition[1]];
     if (!minosSymbol) return;
 
     this.tweens.chain({
@@ -158,7 +161,7 @@ export class Minos extends Scene {
             minos.setPosition(positionX - 70, 0 + 320);
 
             const newKeys = COLUMNS_KEYS.filter(
-              (key, i) => i !== bonusGameColumnIndex
+              (key, i) => i !== bonusGamePosition[0]
             );
 
             this.handleAddRocks(newKeys);

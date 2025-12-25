@@ -8,7 +8,7 @@ import {
 } from '@/network/WebSocketService';
 import {
   getBetsByCharacter,
-  getIsBonusColumn,
+  getIsBonusPosition,
   getSearchParams,
 } from '@/services/helpers';
 import { mdeToNormal } from '@/services/lib/mdeToNormal';
@@ -169,9 +169,9 @@ class GameController {
   private animateSymbol(value: number[][] | undefined) {
     if (!value) return;
 
-    const bonusGameColumnIndex = getIsBonusColumn(value);
+    const bonusGamePosition = getIsBonusPosition(value);
 
-    this.view.minosScene.handleAnimate(value, bonusGameColumnIndex);
+    this.view.minosScene.handleAnimate(value, bonusGamePosition);
   }
 
   private handleOnError(error: TError) {

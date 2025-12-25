@@ -99,18 +99,18 @@ function getBetsByCharacter(key: TCharacterKey, betLadderMDE: number[]) {
   return betLadderMDE.slice(currentIndex * 4, currentIndex * 4 + 4);
 }
 
-function getIsBonusColumn(value: number[][]): number {
+function getIsBonusPosition(value: number[][]): number[] {
   for (let rowIdx = 0; rowIdx < value.length; rowIdx++) {
     const row = value[rowIdx];
 
     for (let colidx = 0; colidx < row.length; colidx++) {
       if (row[colidx] === 10) {
-        return rowIdx;
+        return [rowIdx, colidx];
       }
     }
   }
 
-  return -1;
+  return [];
 }
 
 export {
@@ -121,5 +121,5 @@ export {
   getCharacteristic,
   getBetsByCharacter,
   getSymbol,
-  getIsBonusColumn,
+  getIsBonusPosition,
 };
