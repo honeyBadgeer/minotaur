@@ -76,40 +76,47 @@ export class Minos extends Scene {
       const hideCol = this.hideColumns[key];
       const frontCol = this.frontColumns[key];
 
-      this.tweens.addMultiple([
+      const timeLine = this.add.timeline([
         {
-          targets: frontCol,
-          y: this.game.canvas.height + 500,
-          duration: containerFallingAnimDuration,
-          delay: i * 100,
-          ease: 'Back.easeInOut',
-          easeParams: [1.2],
-          onComplete: () => {
-            this.symbolsContainer?.clearMask();
+          at: 0,
+          tween: {
+            targets: frontCol,
+            y: this.game.canvas.height + 500,
+            duration: containerFallingAnimDuration,
+            delay: i * 100,
+            ease: 'Back.easeInOut',
+            easeParams: [1.2],
           },
         },
         {
-          targets: hideCol,
-          y: { from: hideContainePositionY, to: 0 },
-          duration: containerFallingAnimDuration,
-          delay: i * 100,
-          ease: 'Back.easeInOut',
-          easeParams: [1.2],
-          onComplete: () => {
-            frontCol?.removeAll(true);
-            const children = hideCol?.list.slice();
-            children?.forEach((child) => {
-              frontCol!.add(child);
-            });
-            hideCol?.removeAll(true);
-            hideCol?.setY(hideContainePositionY);
-            frontCol?.setY(0);
+          at: 10,
+          tween: {
+            targets: hideCol,
+            y: { from: hideContainePositionY, to: 0 },
+            duration: containerFallingAnimDuration,
+            delay: i * 100,
+            ease: 'Back.easeInOut',
+            easeParams: [1.2],
+            onComplete: () => {
+              frontCol?.removeAll(true);
+              const children = hideCol?.list.slice();
+              children?.forEach((child) => {
+                frontCol!.add(child);
+              });
+              hideCol?.removeAll(true);
+              hideCol?.setY(hideContainePositionY);
+              frontCol?.setY(0);
 
-            if (i === COLUMNS_KEYS.length - 1)
-              this.handleCheckIsBonus(bonusGamePosition);
+              if (i === COLUMNS_KEYS.length - 1) {
+                this.symbolsContainer?.clearMask();
+                this.handleCheckIsBonus(bonusGamePosition);
+              }
+            },
           },
         },
       ]);
+
+      timeLine.play();
     });
   }
 
