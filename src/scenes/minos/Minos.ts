@@ -36,6 +36,7 @@ export class Minos extends Scene {
   };
   private maskRect: GameObjects.Rectangle | null = null;
   private mask: Phaser.Display.Masks.GeometryMask | null = null;
+  private fourthColumnTileSprite: Phaser.GameObjects.TileSprite | null = null;
 
   constructor() {
     super('Minos');
@@ -56,6 +57,15 @@ export class Minos extends Scene {
       .setVisible(false);
 
     this.mask = this.maskRect.createGeometryMask();
+
+    this.fourthColumnTileSprite = this.add.tileSprite(
+      0,
+      -1034,
+      266,
+      1034,
+      'symbolsAll'
+    );
+    this.fourthColumnTileSprite.setOrigin(0.5, 0).setTileScale(1, 3);
   }
 
   initCombination(value: number[][]) {
@@ -72,13 +82,13 @@ export class Minos extends Scene {
 
     this.handleCreateCombination(newCombination, this.hideColumns);
 
+    const timeLine1 = this.add.timeline({});
+
     COLUMNS_KEYS.forEach((key, i) => {
-      const hideCol = this.hideColumns[key];
       const frontCol = this.frontColumns[key];
 
-      const timeLine = this.add.timeline([
+      timeLine1.add([
         {
-          at: 0,
           tween: {
             targets: frontCol,
             y: this.game.canvas.height + 500,
@@ -91,34 +101,133 @@ export class Minos extends Scene {
             },
           },
         },
-        {
-          at: 10,
-          tween: {
-            targets: hideCol,
-            y: 0,
-            duration: containerFallingAnimDuration,
-            delay: i * 50,
-            ease: 'Back.easeInOut',
-            easeParams: [1.2],
-            onComplete: () => {
-              const hideColSymbols = hideCol?.list.slice();
-              hideColSymbols?.forEach((child) => {
-                frontCol!.add(child);
-              });
-              hideCol?.removeAll(true).setY(hideContainePositionY);
+      ]);
+    });
 
-              frontCol?.setY(0);
-
-              if (i === COLUMNS_KEYS.length - 1) {
-                this.symbolsContainer?.clearMask();
-                this.handleCheckIsBonus(bonusGamePosition);
-              }
-            },
+    const timeLine2 = this.add.timeline([
+      {
+        tween: {
+          targets: this.hideColumns.first,
+          y: 0,
+          duration: containerFallingAnimDuration,
+          ease: 'Back.easeInOut',
+          easeParams: [1.2],
+          onComplete: () => {
+            const hideColSymbols = this.hideColumns.first?.list.slice();
+            hideColSymbols?.forEach((child) => {
+              this.frontColumns.first!.add(child);
+            });
+            this.hideColumns.first?.removeAll(true).setY(hideContainePositionY);
+            this.frontColumns.first?.setY(0);
           },
         },
-      ]);
+      },
+      {
+        tween: {
+          targets: this.hideColumns.second,
+          y: 0,
+          duration: containerFallingAnimDuration,
+          delay: 50,
+          ease: 'Back.easeInOut',
+          easeParams: [1.2],
+          onComplete: () => {
+            const hideColSymbols = this.hideColumns.second?.list.slice();
+            hideColSymbols?.forEach((child) => {
+              this.frontColumns.second!.add(child);
+            });
+            this.hideColumns.second
+              ?.removeAll(true)
+              .setY(hideContainePositionY);
+            this.frontColumns.second?.setY(0);
+          },
+        },
+      },
+      {
+        tween: {
+          targets: this.hideColumns.third,
+          y: 0,
+          duration: containerFallingAnimDuration,
+          delay: 100,
+          ease: 'Back.easeInOut',
+          easeParams: [1.2],
+          onStart: () => {
+            this.time.delayedCall(50, () => {
+              this.hideColumns.fourth?.add(this.fourthColumnTileSprite!);
 
-      timeLine.play();
+              const timeLine3 = this.add.timeline([
+                {
+                  tween: {
+                    targets: this.fourthColumnTileSprite,
+                    y: 404,
+                    ease: 'Back.easeInOut',
+                    duration: 450,
+                  },
+                },
+                {
+                  tween: {
+                    targets: this.fourthColumnTileSprite,
+                    tilePositionY: -4000,
+                    ease: 'Linear',
+                    duration: 2500,
+                    delay: 350,
+                  },
+                },
+                {
+                  tween: {
+                    targets: this.fourthColumnTileSprite,
+                    y: 1500,
+                    ease: 'Linear',
+                    duration: 50,
+                    delay: 2500,
+                  },
+                },
+                {
+                  tween: {
+                    targets: this.hideColumns.fourth,
+                    y: 0,
+                    duration: containerFallingAnimDuration,
+                    ease: 'Back.easeOut',
+                    delay: 2500,
+                    onComplete: () => {
+                      this.hideColumns.fourth?.remove(
+                        this.fourthColumnTileSprite!
+                      );
+                      this.fourthColumnTileSprite?.setY(-1034);
+                      this.fourthColumnTileSprite!.tilePositionY = 0;
+                      const hideColSymbols =
+                        this.hideColumns.fourth?.list.slice();
+                      hideColSymbols?.forEach((child) => {
+                        this.frontColumns.fourth!.add(child);
+                      });
+                      this.hideColumns.fourth
+                        ?.removeAll(true)
+                        .setY(hideContainePositionY);
+                      this.frontColumns.fourth?.setY(0);
+                      this.symbolsContainer?.clearMask();
+                      this.handleCheckIsBonus(bonusGamePosition);
+                    },
+                  },
+                },
+              ]);
+
+              timeLine3.play();
+            });
+          },
+          onComplete: () => {
+            const hideColSymbols = this.hideColumns.third?.list.slice();
+            hideColSymbols?.forEach((child) => {
+              this.frontColumns.third!.add(child);
+            });
+            this.hideColumns.third?.removeAll(true).setY(hideContainePositionY);
+            this.frontColumns.third?.setY(0);
+          },
+        },
+      },
+    ]);
+
+    timeLine1.play();
+    this.time.delayedCall(10, () => {
+      timeLine2.play();
     });
   }
 
@@ -163,11 +272,10 @@ export class Minos extends Scene {
           ease: 'Linear',
           duration: 400,
           onComplete: (twin: Phaser.Tweens.Tween) => {
-            const positionX = minosSymbol.x;
             column?.removeAll(true);
             const minos = new MinotaurFull(this);
             column?.add(minos);
-            minos.setPosition(positionX - 70, 0 + 320);
+            minos.setPosition(0, 320);
 
             const newKeys = COLUMNS_KEYS.filter(
               (key, i) => i !== bonusGamePosition[0]
@@ -236,26 +344,26 @@ export class Minos extends Scene {
   }
 
   private createColumns() {
-    this.frontColumns.first = this.add.container(0, 0);
+    this.frontColumns.first = this.add.container(112, 0);
     this.frontColumns.first.name = `first front column`;
-    this.frontColumns.second = this.add.container(0, 0);
+    this.frontColumns.second = this.add.container(337, 0);
     this.frontColumns.second.name = `second front column`;
-    this.frontColumns.third = this.add.container(0, 0);
+    this.frontColumns.third = this.add.container(562, 0);
     this.frontColumns.third.name = `third front column`;
-    this.frontColumns.fourth = this.add.container(0, 0);
+    this.frontColumns.fourth = this.add.container(787, 0);
     this.frontColumns.fourth.name = `fourth front column`;
-    this.frontColumns.fifth = this.add.container(0, 0);
+    this.frontColumns.fifth = this.add.container(1012, 0);
     this.frontColumns.fifth.name = `fifth front column`;
 
-    this.hideColumns.first = this.add.container(0, hideContainePositionY);
+    this.hideColumns.first = this.add.container(112, hideContainePositionY);
     this.hideColumns.first.name = `first hide column`;
-    this.hideColumns.second = this.add.container(0, hideContainePositionY);
+    this.hideColumns.second = this.add.container(337, hideContainePositionY);
     this.hideColumns.second.name = `second hide column`;
-    this.hideColumns.third = this.add.container(0, hideContainePositionY);
+    this.hideColumns.third = this.add.container(562, hideContainePositionY);
     this.hideColumns.third.name = `third hide column`;
-    this.hideColumns.fourth = this.add.container(0, hideContainePositionY);
+    this.hideColumns.fourth = this.add.container(787, hideContainePositionY);
     this.hideColumns.fourth.name = `fourth hide column`;
-    this.hideColumns.fifth = this.add.container(0, hideContainePositionY);
+    this.hideColumns.fifth = this.add.container(1012, hideContainePositionY);
     this.hideColumns.fifth.name = `fifth hide column`;
 
     this.symbolsContainer?.add([
@@ -305,9 +413,7 @@ export class Minos extends Scene {
         const posX = rowIdx * offsetX;
         const posY = colIdx * offsetY;
 
-        const newSymbol = new Symbol(this, type, posX, posY);
-
-        this.symbolsContainer?.add(newSymbol);
+        const newSymbol = new Symbol(this, type, 0, posY);
 
         this.handleSetColumns(rowIdx, newSymbol, container);
       });

@@ -31,10 +31,7 @@ export class Symbol extends GameObjects.Container {
 
     if (this.symbolType === 'minotaur') this.spineInstance.setScale(0.7);
 
-    this.setPosition(
-      x + this.spineInstance.displayWidth / 2,
-      y + this.spineInstance.displayHeight / 2
-    );
+    this.setPosition(0, y + this.spineInstance.displayHeight / 2);
   }
 
   public getType() {
