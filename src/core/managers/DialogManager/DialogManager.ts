@@ -2,6 +2,7 @@ import { DialogEvents } from '@/core/events/events';
 import type {
   IBigWinConfig,
   IBundleConfig,
+  IBuyBonusConfig,
   IDialogData,
   IErrorConfig,
   IInsufficientConfig,
@@ -13,6 +14,7 @@ import type { BaseDialog } from '@/ui/components/BaseDialog';
 import { AutoModeDialog } from '@ui/dialogs/AutoModeDialog';
 import { BigWinDialog } from '@ui/dialogs/BigWinDialog';
 import { ConfirmDialog } from '@ui/dialogs/ConfirmDialog';
+import { BuyBonusDialog } from '@ui/dialogs/BuyBonusDialog';
 import { ErrorDialog } from '@ui/dialogs/ErrorDialog';
 import { InsufficientFundsDialog } from '@ui/dialogs/InsufficientFundsDialog';
 import { Onboarding } from '@ui/dialogs/Onboarding';
@@ -122,6 +124,8 @@ export class DialogManager {
         );
       case 'error':
         return new ErrorDialog(this.scene, data as IErrorConfig);
+      case 'buy-bonus':
+        return new BuyBonusDialog(this.scene, data as IBuyBonusConfig);
     }
   }
 }

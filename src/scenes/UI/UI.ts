@@ -17,6 +17,7 @@ import { modeButtonStates } from '@/ui/components/ControlBar/lib/constants';
 import { SightPointer } from '@/entities/SightPointer';
 import { isMobile } from '@/services/lib/isMobile';
 import { PurchaseEvents } from '@/network/PurchaseService/PurchaseService';
+import { BonusGameEvents } from '@/core/events/events';
 
 const animatedPointerDuration = 300;
 
@@ -31,6 +32,7 @@ export class UIScene extends Scene {
   exitButton: IconButton | null = null;
   soundButton: IconButton | null = null;
   rulesButton: IconButton | null = null;
+  buyBonusButton: IconButton | null = null;
   controlBar: ControlBar | null = null;
   statisticBar: StatisticBar | null = null;
   howToPlay: GameObjects.Container | null = null;
@@ -316,6 +318,58 @@ export class UIScene extends Scene {
       },
       duration: 300,
       ease: 'Quad.Out',
+      onComplete: () => {
+        this.createBuyBonusButton();
+      },
+    });
+  }
+
+  createBuyBonusButton() {
+    if (!this.soundButton) return;
+
+    this.buyBonusButton = new IconButton(
+      this,
+      0,
+      0,
+      {
+        onUp: () => {
+          eventBus.emit(BonusGameEvents.ShowBuyBonusDialog);
+        },
+        onOver: () => this.events.emit(GameEvents.UPDATE_CURSOR, 'pointer'),
+        onOut: () => this.events.emit(GameEvents.UPDATE_CURSOR, 'none'),
+      },
+      BUTTON_BACKGROUND_STATES,
+      {
+        normal: 'bundle-1',
+        hover: 'bundle-1-hover',
+        pressed: 'bundle-1-pressed',
+        disabled: 'bundle-1-pressed',
+      }
+    );
+
+    const soundButtonY = this.soundButton.y;
+    const soundButtonHeight = this.soundButton.height;
+    const spacing = 20;
+
+    this.buyBonusButton
+      .setPosition(
+        this.sys.canvas.width + 50,
+        soundButtonY +
+          soundButtonHeight / 2 +
+          this.buyBonusButton.height / 2 +
+          spacing
+      )
+      .setDepth(1000);
+
+    this.tweens.add({
+      targets: this.buyBonusButton,
+      x: {
+        from: this.sys.canvas.width + 50,
+        to: this.sys.canvas.width - this.buyBonusButton.width / 2 - 26,
+      },
+      duration: 300,
+      ease: 'Quad.Out',
+      delay: 100,
     });
   }
 
@@ -329,6 +383,7 @@ export class UIScene extends Scene {
     this.exitButton?.setDisabled(false);
     this.rulesButton?.setDisabled(false);
     this.soundButton?.setDisabled(false);
+    this.buyBonusButton?.setDisabled(false);
   }
 
   disableUI() {
@@ -336,6 +391,7 @@ export class UIScene extends Scene {
     this.exitButton?.setDisabled(true);
     this.rulesButton?.setDisabled(true);
     this.soundButton?.setDisabled(true);
+    this.buyBonusButton?.setDisabled(true);
   }
 
   activateControlBarSound() {

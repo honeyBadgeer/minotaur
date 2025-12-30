@@ -124,6 +124,7 @@ export type TSceneKey =
 export type TDialogKey =
   | 'autoMode'
   | 'big-win'
+  | 'buy-bonus'
   | 'confirm'
   | 'error'
   | 'insufficient-funds'
@@ -154,13 +155,20 @@ export interface IWarningConfig {
 }
 export type IBigWinConfig = number;
 
+export interface IBuyBonusConfig {
+  prices: Record<'reels_1_3' | 'reel_4' | 'reel_5', number>;
+  onBuy: (option: 'reels_1_3' | 'reel_4' | 'reel_5') => void;
+  onClose?: () => void;
+}
+
 export type IDialogData =
   | IErrorConfig
   | IInsufficientConfig
   | IUnauthorizedConfig
   | IBigWinConfig
   | IBundleConfig
-  | IWarningConfig;
+  | IWarningConfig
+  | IBuyBonusConfig;
 
 export type TError = {
   type: 'error' | 'demo' | 'influence' | 'login';

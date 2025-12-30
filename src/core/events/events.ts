@@ -41,3 +41,12 @@ export enum BetEvents {
   Increase = 'increaseBet',
   Decrease = 'decreaseBet',
 }
+
+export enum BonusGameEvents {
+  StartBonusGame = 'startBonusGame',
+  Respin = 'respin',
+  BonusGameComplete = 'bonusGameComplete',
+  UpdateMultiplier = 'updateMultiplier',
+  BuyBonus = 'buyBonus',
+  ShowBuyBonusDialog = 'showBuyBonusDialog',
+}
