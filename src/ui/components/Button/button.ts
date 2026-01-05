@@ -86,7 +86,10 @@ export class Button extends GameObjects.Container {
     );
 
     this.on('pointerdown', () => this.animateScale(0.95));
-    this.on('pointerup', () => this.animateScale(1));
+    // this.on('pointerup', () => {
+    //   this.animateScale(1);
+    //   this.onUp();
+    // });
     this.on('pointerout', () => this.animateScale(1));
 
     this.scene.add.existing(this);

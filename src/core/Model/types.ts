@@ -5,6 +5,7 @@ export enum GameStates {
   WAITING,
   PLAYING,
   ERROR,
+  BONUS_GAME,
 }
 
 export enum ModelStates {
