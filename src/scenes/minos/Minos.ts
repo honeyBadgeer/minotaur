@@ -82,29 +82,22 @@ export class Minos extends Scene {
 
     this.handleCreateCombination(newCombination, this.hideColumns);
 
-    const timeLine1 = this.add.timeline({});
+    const firstColumntTimeLine = this.add.timeline({});
 
-    COLUMNS_KEYS.forEach((key, i) => {
-      const frontCol = this.frontColumns[key];
-
-      timeLine1.add([
-        {
-          tween: {
-            targets: frontCol,
-            y: this.game.canvas.height + 500,
-            duration: containerFallingAnimDuration,
-            delay: i * 50,
-            ease: 'Back.easeInOut',
-            easeParams: [1.2],
-            onComplete: () => {
-              frontCol?.removeAll(true);
-            },
+    firstColumntTimeLine.add([
+      {
+        tween: {
+          targets: this.frontColumns.first,
+          y: this.game.canvas.height + 500,
+          duration: containerFallingAnimDuration,
+          delay: 0,
+          ease: 'Back.easeInOut',
+          easeParams: [1.2],
+          onComplete: () => {
+            this.frontColumns.first?.removeAll(true);
           },
         },
-      ]);
-    });
-
-    const timeLine2 = this.add.timeline([
+      },
       {
         tween: {
           targets: this.hideColumns.first,
@@ -112,6 +105,8 @@ export class Minos extends Scene {
           duration: containerFallingAnimDuration,
           ease: 'Back.easeInOut',
           easeParams: [1.2],
+          onStart: () =>
+            this.handleStartSecondColumnAnimation(bonusGamePosition),
           onComplete: () => {
             const hideColSymbols = this.hideColumns.first?.list.slice();
             hideColSymbols?.forEach((child) => {
@@ -122,14 +117,36 @@ export class Minos extends Scene {
           },
         },
       },
+    ]);
+
+    firstColumntTimeLine.play();
+  }
+
+  private handleStartSecondColumnAnimation(bonusGamePosition: number[]) {
+    const secondColumntTimeLine = this.add.timeline([
+      {
+        tween: {
+          targets: this.frontColumns.second,
+          y: this.game.canvas.height + 500,
+          duration: containerFallingAnimDuration,
+          delay: 50,
+          ease: 'Back.easeInOut',
+          easeParams: [1.2],
+          onComplete: () => {
+            this.frontColumns.second?.removeAll(true);
+          },
+        },
+      },
       {
         tween: {
           targets: this.hideColumns.second,
           y: 0,
           duration: containerFallingAnimDuration,
-          delay: 50,
           ease: 'Back.easeInOut',
           easeParams: [1.2],
+          delay: 50,
+          onStart: () =>
+            this.handleStartThirdColumnAnimation(bonusGamePosition),
           onComplete: () => {
             const hideColSymbols = this.hideColumns.second?.list.slice();
             hideColSymbols?.forEach((child) => {
@@ -142,12 +159,59 @@ export class Minos extends Scene {
           },
         },
       },
+    ]);
+
+    secondColumntTimeLine.play();
+  }
+
+  handleStartThirdColumnAnimation(bonusGamePosition: number[]) {
+    const thirdColumntTimeLine = this.add.timeline([
+      {
+        tween: {
+          targets: this.frontColumns.third,
+          y: this.game.canvas.height + 500,
+          duration: containerFallingAnimDuration,
+          delay: 100,
+          ease: 'Back.easeInOut',
+          easeParams: [1.2],
+          onComplete: () => {
+            this.frontColumns.third?.removeAll(true);
+          },
+        },
+      },
       {
         tween: {
           targets: this.hideColumns.third,
           y: 0,
           duration: containerFallingAnimDuration,
           delay: 100,
+          ease: 'Back.easeInOut',
+          easeParams: [1.2],
+          onStart: () =>
+            this.handleStartFourthColumnAnimation(bonusGamePosition),
+          onComplete: () => {
+            const hideColSymbols = this.hideColumns.third?.list.slice();
+            hideColSymbols?.forEach((child) => {
+              this.frontColumns.third!.add(child);
+            });
+            this.hideColumns.third?.removeAll(true).setY(hideContainePositionY);
+            this.frontColumns.third?.setY(0);
+          },
+        },
+      },
+    ]);
+
+    thirdColumntTimeLine.play();
+  }
+
+  private handleStartFourthColumnAnimation(bonusGamePosition: number[]) {
+    const fourthColumntTimeLine = this.add.timeline([
+      {
+        tween: {
+          targets: this.frontColumns.fourth,
+          y: this.game.canvas.height + 500,
+          duration: containerFallingAnimDuration,
+          delay: 50,
           ease: 'Back.easeInOut',
           easeParams: [1.2],
           onStart: () => {
@@ -214,21 +278,13 @@ export class Minos extends Scene {
             });
           },
           onComplete: () => {
-            const hideColSymbols = this.hideColumns.third?.list.slice();
-            hideColSymbols?.forEach((child) => {
-              this.frontColumns.third!.add(child);
-            });
-            this.hideColumns.third?.removeAll(true).setY(hideContainePositionY);
-            this.frontColumns.third?.setY(0);
+            this.frontColumns.fourth?.removeAll(true);
           },
         },
       },
     ]);
 
-    timeLine1.play();
-    this.time.delayedCall(10, () => {
-      timeLine2.play();
-    });
+    fourthColumntTimeLine.play();
   }
 
   private handleCheckIsBonus(bonusGamePosition: number[]) {
